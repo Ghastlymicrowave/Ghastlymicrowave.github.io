@@ -434,6 +434,10 @@ main.detail-page .art-content {
 }
 
 
+/* =========================================================
+   DETAIL HEADINGS
+   ========================================================= */
+
 main.detail-page .project-content h1,
 main.detail-page .project-content h2,
 main.detail-page .project-content h3,
@@ -444,18 +448,40 @@ main.detail-page .art-content h3,
 main.detail-page .art-content h4 {
     margin-top: 2.5rem;
     margin-bottom: 1rem;
+
+    padding: 0;
 }
 
+
+/* H3 */
+
+main.detail-page .project-content h3,
+main.detail-page .art-content h3 {
+    margin-top: 2rem;
+    margin-bottom: 0.75rem;
+
+    font-size: 1.35rem;
+    line-height: 1.3;
+}
+
+
+/* First heading */
 
 main.detail-page .project-content > h1:first-child,
 main.detail-page .project-content > h2:first-child,
 main.detail-page .project-content > h3:first-child,
+main.detail-page .project-content > h4:first-child,
 main.detail-page .art-content > h1:first-child,
 main.detail-page .art-content > h2:first-child,
-main.detail-page .art-content > h3:first-child {
+main.detail-page .art-content > h3:first-child,
+main.detail-page .art-content > h4:first-child {
     margin-top: 0;
 }
 
+
+/* =========================================================
+   PARAGRAPHS
+   ========================================================= */
 
 main.detail-page .project-content p,
 main.detail-page .art-content p {
