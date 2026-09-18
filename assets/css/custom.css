@@ -2,13 +2,9 @@
    GLOBAL BACKGROUND
    ========================================================= */
 
-/*
-   One continuous pastel background for the entire site.
-   It fills the viewport. Content sits on top of it.
-*/
-
 html,
 body {
+    min-height: 100%;
     background: #eeeef3;
 }
 
@@ -17,18 +13,12 @@ body {
 }
 
 
-/*
-   The pastel field.
-
-   This is attached to the body so every page gets it:
-   homepage, Games, Art, projects, etc.
-*/
+/* Soft animated pastel background */
 
 body::before {
     content: "";
 
     position: fixed;
-
     inset: -20%;
 
     z-index: -1;
@@ -73,20 +63,14 @@ body::before {
 
     transform: scale(1.1);
 
-    animation:
-        pastel-drift 35s ease-in-out infinite alternate;
+    animation: pastel-drift 35s ease-in-out infinite alternate;
 }
 
-
-/*
-   Extremely subtle texture.
-*/
 
 body::after {
     content: "";
 
     position: fixed;
-
     inset: 0;
 
     z-index: -1;
@@ -159,42 +143,149 @@ body::after {
 
 
 /* =========================================================
-   MAIN CONTENT WIDTH
+   INDEX / LIST PAGES
    ========================================================= */
 
 /*
-   Normal pages scale dynamically.
+   The main wrapper is transparent.
 
-   This is intentionally wider than the old ~1/3-screen
-   appearance while still leaving the pastel background
-   visible around the content.
+   Each section gets its own rounded glass panel.
 */
 
 .site-main {
+    box-sizing: border-box;
+
     width: min(1100px, 92vw);
 
-    margin-left: auto;
-    margin-right: auto;
+    margin: 3rem auto;
+
+    padding: 0;
+
+    background: transparent;
+}
+
+
+/* Individual Recent Games / Recent Art panels */
+
+.site-main .projects-section {
+    box-sizing: border-box;
+
+    width: 100%;
+
+    margin: 0 0 3rem;
+
+    padding: 2.5rem 3rem;
+
+    background: rgba(255, 255, 255, 0.34);
+
+    backdrop-filter: blur(14px);
+    -webkit-backdrop-filter: blur(14px);
+
+    border:
+        1px solid rgba(255, 255, 255, 0.42);
+
+    border-radius: 16px;
+}
+
+
+/* No extra space below the last panel */
+
+.site-main .projects-section:last-child {
+    margin-bottom: 0;
+}
+
+
+/* Section headings */
+
+.site-main .projects-section > h1 {
+    margin-top: 0;
+
+    margin-bottom: 2rem;
 }
 
 
 /* =========================================================
-   PROJECT / ART DETAIL PAGE
+   PROJECT / ART CARDS
+   ========================================================= */
+
+.project-grid {
+    display: grid;
+
+    grid-template-columns:
+        repeat(auto-fit, minmax(280px, 1fr));
+
+    gap: 1.5rem;
+
+    width: 100%;
+
+    margin: 0;
+}
+
+
+.project-card {
+    display: block;
+
+    overflow: hidden;
+
+    box-sizing: border-box;
+
+    text-decoration: none;
+
+    color: inherit;
+
+    background: rgba(255, 255, 255, 0.48);
+
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+
+    border:
+        1px solid rgba(255, 255, 255, 0.40);
+
+    border-radius: 12px;
+
+    transition:
+        transform 0.25s ease,
+        background-color 0.25s ease;
+}
+
+
+.project-card:hover {
+    transform: translateY(-4px);
+
+    background:
+        rgba(255, 255, 255, 0.62);
+}
+
+
+.project-card img {
+    display: block;
+
+    width: 100%;
+
+    aspect-ratio: 16 / 9;
+
+    object-fit: cover;
+}
+
+
+.project-card-content {
+    padding: 1rem 1.1rem 1.2rem;
+}
+
+
+/* =========================================================
+   DETAIL PAGES
    ========================================================= */
 
 .detail-page {
+    box-sizing: border-box;
+
     width: clamp(320px, 44vw, 900px);
 
     margin-left: auto;
     margin-right: auto;
 }
 
-
-/*
-   Translucent white surface.
-
-   The pastel background remains visible through it.
-*/
 
 .project-post,
 .art-post {
@@ -302,6 +393,7 @@ body::after {
     display: block;
 
     width: 100%;
+
     max-width: 900px;
 
     height: auto;
@@ -332,6 +424,7 @@ body::after {
     display: block;
 
     width: 100%;
+
     height: auto;
 
     margin: 0;
@@ -339,13 +432,15 @@ body::after {
 
 
 /* =========================================================
-   VIDEO
+   YOUTUBE VIDEO
    ========================================================= */
 
 .youtube-embed {
     position: relative;
 
     width: 100%;
+
+    max-width: 900px;
 
     aspect-ratio: 16 / 9;
 
@@ -357,14 +452,21 @@ body::after {
     display: block;
 
     width: 100%;
+
     height: 100%;
 
     border: 0;
 }
 
 
+/* =========================================================
+   LOCAL VIDEO
+   ========================================================= */
+
 .portfolio-video {
     width: 100%;
+
+    max-width: 900px;
 
     margin: 2rem auto;
 }
@@ -374,24 +476,25 @@ body::after {
     display: block;
 
     width: 100%;
+
     height: auto;
 }
 
 
 /* =========================================================
-   POST NAVIGATION
+   BACK NAVIGATION
    ========================================================= */
 
 .post-navigation {
-    width: 100%;
-
     box-sizing: border-box;
+
+    width: 100%;
 
     margin: 2rem auto;
 
     padding: 1rem;
 
-    background: rgba(255, 255, 255, 0.38);
+    background: rgba(255, 255, 255, 0.40);
 
     backdrop-filter: blur(10px);
     -webkit-backdrop-filter: blur(10px);
@@ -400,73 +503,6 @@ body::after {
         1px solid rgba(255, 255, 255, 0.35);
 
     border-radius: 10px;
-}
-
-
-/* =========================================================
-   PROJECT / ART CARDS
-   ========================================================= */
-
-.project-grid {
-    display: grid;
-
-    grid-template-columns:
-        repeat(auto-fit, minmax(280px, 1fr));
-
-    gap: 1.5rem;
-
-    width: 100%;
-
-    margin: 0 auto;
-}
-
-
-.project-card {
-    display: block;
-
-    overflow: hidden;
-
-    text-decoration: none;
-
-    color: inherit;
-
-    background: rgba(255, 255, 255, 0.45);
-
-    backdrop-filter: blur(10px);
-    -webkit-backdrop-filter: blur(10px);
-
-    border:
-        1px solid rgba(255, 255, 255, 0.35);
-
-    border-radius: 10px;
-
-    transition:
-        transform 0.25s ease,
-        background-color 0.25s ease;
-}
-
-
-.project-card:hover {
-    transform: translateY(-4px);
-
-    background:
-        rgba(255, 255, 255, 0.60);
-}
-
-
-.project-card img {
-    display: block;
-
-    width: 100%;
-
-    aspect-ratio: 16 / 9;
-
-    object-fit: cover;
-}
-
-
-.project-card-content {
-    padding: 1rem 1.1rem 1.2rem;
 }
 
 
@@ -478,6 +514,17 @@ body::after {
 
     .site-main {
         width: calc(100% - 1rem);
+
+        margin: 1.5rem auto;
+    }
+
+
+    .site-main .projects-section {
+        margin-bottom: 1.5rem;
+
+        padding: 1.5rem;
+
+        border-radius: 12px;
     }
 
 
@@ -489,6 +536,7 @@ body::after {
     .project-post,
     .art-post {
         margin-top: 1.5rem;
+
         margin-bottom: 1.5rem;
 
         padding: 1.5rem;
@@ -505,7 +553,6 @@ body::after {
     .image-grid {
         grid-template-columns: 1fr;
     }
-
 }
 
 
@@ -519,8 +566,8 @@ body::after {
         animation: none;
     }
 
+
     .project-card {
         transition: none;
     }
-
 }
