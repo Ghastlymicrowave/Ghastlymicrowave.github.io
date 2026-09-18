@@ -1,25 +1,22 @@
 ---
-
 layout: default
 title: Home
------------
+---
 
 <main class="home">
 
-```
-<section class="projects-section">
+    <section class="projects-section">
 
-    <h1>Games</h1>
+        <h1>Games</h1>
 
-    <div class="project-grid">
+        <div class="project-grid">
 
-        {% for project in site.projects %}
-            {% include project-card.html project=project %}
-        {% endfor %}
+            {% for project in site.projects %}
+                {% include project-card.html project=project %}
+            {% endfor %}
 
-    </div>
+        </div>
 
-</section>
-```
+    </section>
 
 </main>
