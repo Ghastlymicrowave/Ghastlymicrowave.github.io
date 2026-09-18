@@ -20,13 +20,13 @@ Bloobo is a 2D Physics based platformer that I worked on as a collaboration with
 </div>
 
 <div class="image-grid">
-    <img src="{{ '/assets/projects/bloobo/bb_screenshot_1' | relative_url }}" alt="Gameplay screenshot 1">
-    <img src="{{ '/assets/projects/bloobo/bb_screenshot_2' | relative_url }}" alt="Gameplay screenshot 2">
-    <img src="{{ '/assets/projects/bloobo/bb_screenshot_3' | relative_url }}" alt="Gameplay screenshot 3">
-    <img src="{{ '/assets/projects/bloobo/bb_screenshot_4' | relative_url }}" alt="Gameplay screenshot 4">
-    <img src="{{ '/assets/projects/bloobo/bb_screenshot_5' | relative_url }}" alt="Gameplay screenshot 5">
-    <img src="{{ '/assets/projects/bloobo/bb_screenshot_6' | relative_url }}" alt="Gameplay screenshot 6">
-    <img src="{{ '/assets/projects/bloobo/bb_screenshot_7' | relative_url }}" alt="Gameplay screenshot 7">
+    <img src="{{ '/assets/projects/bloobo/bb_screenshot_1.png' | relative_url }}" alt="Gameplay screenshot 1">
+    <img src="{{ '/assets/projects/bloobo/bb_screenshot_2.png' | relative_url }}" alt="Gameplay screenshot 2">
+    <img src="{{ '/assets/projects/bloobo/bb_screenshot_3.png' | relative_url }}" alt="Gameplay screenshot 3">
+    <img src="{{ '/assets/projects/bloobo/bb_screenshot_4.png' | relative_url }}" alt="Gameplay screenshot 4">
+    <img src="{{ '/assets/projects/bloobo/bb_screenshot_5.png' | relative_url }}" alt="Gameplay screenshot 5">
+    <img src="{{ '/assets/projects/bloobo/bb_screenshot_6.png' | relative_url }}" alt="Gameplay screenshot 6">
+    <img src="{{ '/assets/projects/bloobo/bb_screenshot_7.png' | relative_url }}" alt="Gameplay screenshot 7">
 </div>
 
 The game was hosted on the IOS app store but is currently not available.
@@ -43,9 +43,9 @@ I worked as a Tech Artist and contributed to the game's particle effects and vfx
 One of the most widely used tools I created for this game was a blur effect. Effectively I was using a script to apply a custom shader onto any image then store that. It ran once when the GameObject was loaded and created a temporary image file in data so the blur wouldn't have to run every frame at the cost of some ram. Softer and smoother looking blurs are often incredibly costly on a GPU and because this game was designed to run on phones, this was my workaround to keep it performant. 
 
 <div class="image-grid">
-    <img src="{{ '/assets/projects/bloobo/blur1' | relative_url }}" alt="blur effect">
-    <img src="{{ '/assets/projects/bloobo/blur2' | relative_url }}" alt="blur effect">
-    <img src="{{ '/assets/projects/bloobo/blur3' | relative_url }}" alt="blur effect">
+    <img src="{{ '/assets/projects/bloobo/blur1.png' | relative_url }}" alt="blur effect">
+    <img src="{{ '/assets/projects/bloobo/blur2.png' | relative_url }}" alt="blur effect">
+    <img src="{{ '/assets/projects/bloobo/blur3.png' | relative_url }}" alt="blur effect">
 </div>
 
 The Blur was originally created to soften background art so it would feel like the player character was microscopic. I could easily tweak the parameters of the shader to create other effects such as a glows. (I was using a temp asset for these because it was an image I had on hand that had a complex alpha)
