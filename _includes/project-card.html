@@ -1,22 +1,20 @@
 <a class="project-card" href="{{ include.project.url | relative_url }}">
 
-```
-{% if include.project.thumbnail %}
-    <img
-        src="{{ include.project.thumbnail | relative_url }}"
-        alt="{{ include.project.title }}"
-    >
-{% endif %}
-
-<div class="project-card-content">
-
-    <h2>{{ include.project.title }}</h2>
-
-    {% if include.project.description %}
-        <p>{{ include.project.description }}</p>
+    {% if include.project.thumbnail %}
+        <img
+            src="{{ include.project.thumbnail | relative_url }}"
+            alt="{{ include.project.title }}"
+        >
     {% endif %}
 
-</div>
-```
+    <div class="project-card-content">
+
+        <h2>{{ include.project.title }}</h2>
+
+        {% if include.project.description %}
+            <p>{{ include.project.description }}</p>
+        {% endif %}
+
+    </div>
 
 </a>
