@@ -330,70 +330,57 @@ body::after {
    DETAIL PAGES
    ========================================================= */
 
-/*
-   The original theme gives some content elements their
-   own fixed widths and margins.
+main.detail-page {
+    display: block !important;
 
-   Explicitly reset those here so project and art pages
-   are centered against the viewport.
-*/
-
-.detail-page {
-    box-sizing: border-box;
-
-    display: block;
-
-    width: min(48vw, 960px);
-
-    max-width: calc(100vw - 2rem);
+    width: 54vw !important;
+    max-width: 1050px !important;
+    min-width: 0 !important;
 
     margin: 3rem auto !important;
+    padding: 0 !important;
 
-    padding: 0;
+    float: none !important;
+    position: static !important;
 
-    position: relative;
+    left: auto !important;
+    right: auto !important;
+    top: auto !important;
+    bottom: auto !important;
 
-    left: auto;
+    transform: none !important;
 
-    right: auto;
-
-    transform: none;
+    box-sizing: border-box !important;
 }
 
 
-/* Reset theme content sizing */
+/* =========================================================
+   DETAIL GLASS PANEL
+   ========================================================= */
 
-.detail-page .page-content,
-.detail-page .post-content,
-.detail-page .post,
-.detail-page article {
-    box-sizing: border-box;
-}
-
-
-/* Actual glass panel */
-
-.project-post,
-.art-post {
-    box-sizing: border-box;
-
-    display: block;
+main.detail-page > article.project-post,
+main.detail-page > article.art-post {
+    display: block !important;
 
     width: 100% !important;
-
     max-width: none !important;
+    min-width: 0 !important;
 
-    margin: 0 auto !important;
+    margin: 0 !important;
+    padding: 2.5rem 3rem !important;
 
-    padding: 2.5rem 3rem;
+    float: none !important;
+    position: static !important;
+    transform: none !important;
+
+    box-sizing: border-box !important;
 
     background: rgba(255, 255, 255, 0.38);
 
     backdrop-filter: blur(16px);
     -webkit-backdrop-filter: blur(16px);
 
-    border:
-        1px solid rgba(255, 255, 255, 0.48);
+    border: 1px solid rgba(255, 255, 255, 0.48);
 
     border-radius: 18px;
 }
@@ -403,25 +390,30 @@ body::after {
    DETAIL HEADER
    ========================================================= */
 
-.project-post-header,
-.art-post-header {
-    margin-bottom: 3rem;
+main.detail-page .project-post-header,
+main.detail-page .art-post-header {
+    display: block;
 
-    padding-bottom: 1.5rem;
+    width: 100%;
+
+    margin: 0 0 3rem !important;
+    padding: 0 0 1.5rem;
+
+    box-sizing: border-box;
 
     border-bottom:
         1px solid rgba(40, 40, 50, 0.10);
 }
 
 
-.project-post-header h1,
-.art-post-header h1 {
+main.detail-page .project-post-header h1,
+main.detail-page .art-post-header h1 {
     margin: 0 0 0.5rem;
 }
 
 
-.project-post-header time,
-.art-post-header time {
+main.detail-page .project-post-header time,
+main.detail-page .art-post-header time {
     display: block;
 
     margin: 0;
@@ -436,46 +428,104 @@ body::after {
    DETAIL CONTENT
    ========================================================= */
 
-.project-content,
-.art-content {
-    width: 100% !important;
+main.detail-page .project-content,
+main.detail-page .art-content {
+    display: block;
 
+    width: 100% !important;
     max-width: none !important;
+    min-width: 0 !important;
 
     margin: 0 !important;
+    padding: 0 !important;
+
+    box-sizing: border-box;
 }
 
 
-.project-content h1,
-.project-content h2,
-.project-content h3,
-.project-content h4,
-.art-content h1,
-.art-content h2,
-.art-content h3,
-.art-content h4 {
+main.detail-page .project-content h1,
+main.detail-page .project-content h2,
+main.detail-page .project-content h3,
+main.detail-page .project-content h4,
+main.detail-page .art-content h1,
+main.detail-page .art-content h2,
+main.detail-page .art-content h3,
+main.detail-page .art-content h4 {
     margin-top: 2.5rem;
-
     margin-bottom: 1rem;
 }
 
 
-.project-content > h1:first-child,
-.project-content > h2:first-child,
-.project-content > h3:first-child,
-.art-content > h1:first-child,
-.art-content > h2:first-child,
-.art-content > h3:first-child {
+main.detail-page .project-content > h1:first-child,
+main.detail-page .project-content > h2:first-child,
+main.detail-page .project-content > h3:first-child,
+main.detail-page .art-content > h1:first-child,
+main.detail-page .art-content > h2:first-child,
+main.detail-page .art-content > h3:first-child {
     margin-top: 0;
 }
 
 
-.project-content p,
-.art-content p {
+main.detail-page .project-content p,
+main.detail-page .art-content p {
     margin-top: 0;
-
     margin-bottom: 1.25rem;
 }
+
+
+/* =========================================================
+   BACK NAVIGATION
+   ========================================================= */
+
+main.detail-page > .post-navigation {
+    display: block;
+
+    width: 100% !important;
+    max-width: none !important;
+
+    margin: 2rem 0 0 !important;
+    padding: 1rem;
+
+    box-sizing: border-box;
+
+    float: none !important;
+    position: static !important;
+    transform: none !important;
+
+    background: rgba(255, 255, 255, 0.42);
+
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+
+    border:
+        1px solid rgba(255, 255, 255, 0.40);
+
+    border-radius: 12px;
+}
+
+
+/* =========================================================
+   DETAIL MOBILE
+   ========================================================= */
+
+@media (max-width: 700px) {
+
+    main.detail-page {
+        width: calc(100% - 1rem) !important;
+        max-width: none !important;
+
+        margin: 1.5rem auto !important;
+    }
+
+
+    main.detail-page > article.project-post,
+    main.detail-page > article.art-post {
+        padding: 1.5rem !important;
+        border-radius: 12px;
+    }
+}
+
+
 
 
 /* =========================================================
