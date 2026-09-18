@@ -1,7 +1,8 @@
 ---
-title: "My Game"
-description: "some game"
+title: My Awesome Game
+description: A game I made for...
 thumbnail: "/assets/images/perchanced.png"
+featured: true
 ---
 
 ## Overview
