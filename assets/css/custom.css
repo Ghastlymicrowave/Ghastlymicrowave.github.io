@@ -487,6 +487,8 @@ main.detail-page .project-content p,
 main.detail-page .art-content p {
     margin-top: 0;
     margin-bottom: 1.25rem;
+
+    text-align: justify;
 }
 
 
