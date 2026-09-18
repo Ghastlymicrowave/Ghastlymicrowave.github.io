@@ -6,17 +6,32 @@ PROJECT / ART GRIDS
 display: grid;
 grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
 gap: 2rem;
-max-width: 1400px;
+
+
 width: 95%;
+max-width: 1400px;
+
 margin: 0 auto;
+
+
 }
 
 .project-card {
 display: block;
+
+
 text-decoration: none;
 color: inherit;
+
 overflow: hidden;
 
+background: rgba(255, 255, 255, 0.50);
+
+backdrop-filter: blur(10px);
+-webkit-backdrop-filter: blur(10px);
+
+border: 1px solid rgba(40, 40, 50, 0.07);
+border-radius: 10px;
 
 transition:
     transform 0.25s ease,
@@ -27,29 +42,41 @@ transition:
 
 .project-card:hover {
 transform: translateY(-4px);
+background: rgba(255, 255, 255, 0.68);
 }
 
 .project-card img {
 display: block;
+
+
 width: 100%;
 aspect-ratio: 16 / 9;
+
 object-fit: cover;
+
+
 }
 
 .project-card-content {
-padding: 1rem 0;
+padding: 1rem 1.1rem 1.2rem;
 }
 
-/* Older .projects grid */
+/* =========================================================
+OLDER .projects GRID
+========================================================= */
 
 .projects {
-width: min(1400px, 95%);
-margin: 0 auto;
-
-
 display: grid;
-grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+
+
+grid-template-columns:
+    repeat(auto-fit, minmax(320px, 1fr));
+
 gap: 2rem;
+
+width: min(1400px, 95%);
+
+margin: 0 auto;
 
 
 }
@@ -80,28 +107,48 @@ VIDEOS
 
 .youtube-embed {
 position: relative;
+
+
 width: 100%;
 max-width: 900px;
+
 aspect-ratio: 16 / 9;
+
 margin: 2rem auto;
+
+
 }
 
 .youtube-embed iframe {
+display: block;
+
+
 width: 100%;
 height: 100%;
+
 border: 0;
+
+
 }
 
 .portfolio-video {
 width: 100%;
 max-width: 900px;
+
+
 margin: 2rem auto;
+
+
 }
 
 .portfolio-video video {
 display: block;
+
+
 width: 100%;
 height: auto;
+
+
 }
 
 /* =========================================================
@@ -111,10 +158,16 @@ REGULAR IMAGES
 .project-content img,
 .art-content img {
 display: block;
+
+
 width: 100%;
 max-width: 900px;
+
 height: auto;
+
 margin: 2rem auto;
+
+
 }
 
 /* =========================================================
@@ -123,8 +176,10 @@ IMAGE GALLERIES
 
 .image-grid {
 display: grid;
-grid-template-columns: repeat(2, minmax(0, 1fr));
 
+
+grid-template-columns:
+    repeat(2, minmax(0, 1fr));
 
 gap: 1rem;
 
@@ -138,9 +193,14 @@ margin: 2rem auto;
 
 .image-grid img {
 display: block;
+
+
 width: 100%;
 height: auto;
+
 margin: 0;
+
+
 }
 
 @media (max-width: 600px) {
@@ -157,19 +217,14 @@ margin: 0;
 AMBIENT BACKGROUND
 ========================================================= */
 
-/*
-The background is intentionally VERY low contrast.
-
-Instead of four distinct radial gradients, this uses several
-huge overlapping fields. They blend together into one
-continuous surface.
-*/
-
 body {
-background: #eeeef2;
-}
+min-height: 100vh;
 
-/* Base site surface */
+
+background: #eeeef2;
+
+
+}
 
 .site-container {
 position: relative;
@@ -178,26 +233,19 @@ isolation: isolate;
 
 min-height: 100vh;
 
-/*
-   Keep the underlying page light so existing typography
-   designed for a white background remains readable.
-*/
-
-background: rgba(245, 245, 248, 0.72);
-
 
 }
 
-/* The animated color field */
+/*
+One continuous pastel field.
+
+The color fields overlap heavily so there are no hard
+boundaries or dark center vignette.
+*/
 
 .ambient-background {
 position: fixed;
 
-
-/*
-   Extend beyond the viewport so the edges never become
-   visible during movement.
-*/
 
 inset: -30%;
 
@@ -207,35 +255,35 @@ pointer-events: none;
 
 background:
 
-    /* Large violet field */
+    /* Violet */
     radial-gradient(
-        ellipse 70% 60% at 15% 25%,
-        rgba(175, 155, 215, 0.22) 0%,
+        ellipse 80% 70% at 15% 25%,
+        rgba(175, 155, 215, 0.20) 0%,
         rgba(175, 155, 215, 0) 70%
     ),
 
-    /* Blue field */
+    /* Blue */
     radial-gradient(
-        ellipse 75% 65% at 85% 20%,
-        rgba(145, 185, 220, 0.20) 0%,
+        ellipse 85% 75% at 85% 20%,
+        rgba(145, 185, 220, 0.18) 0%,
         rgba(145, 185, 220, 0) 70%
     ),
 
-    /* Warm field */
+    /* Warm pink */
     radial-gradient(
-        ellipse 70% 65% at 75% 85%,
-        rgba(220, 175, 195, 0.18) 0%,
+        ellipse 80% 75% at 75% 85%,
+        rgba(220, 175, 195, 0.16) 0%,
         rgba(220, 175, 195, 0) 70%
     ),
 
-    /* Mint field */
+    /* Mint */
     radial-gradient(
-        ellipse 75% 60% at 15% 85%,
-        rgba(160, 205, 195, 0.17) 0%,
+        ellipse 85% 70% at 15% 85%,
+        rgba(160, 205, 195, 0.15) 0%,
         rgba(160, 205, 195, 0) 70%
     ),
 
-    /* Overall continuous base */
+    /* Continuous base */
     linear-gradient(
         120deg,
         #eeeef3 0%,
@@ -256,10 +304,10 @@ animation:
 }
 
 /*
-A uniform translucent layer.
+Uniform light veil.
 
-Unlike the previous center vignette, this does NOT make
-the middle darker than the edges.
+This keeps the background subdued without creating
+a darker center.
 */
 
 .ambient-background::after {
@@ -276,9 +324,9 @@ pointer-events: none;
 
 }
 
-/* =========================================================
-VERY SUBTLE ORGANIC TEXTURE
-========================================================= */
+/*
+Very subtle texture.
+*/
 
 .ambient-background::before {
 content: "";
@@ -286,10 +334,6 @@ content: "";
 
 position: absolute;
 inset: 0;
-
-/*
-   Extremely fine texture. It should barely be visible.
-*/
 
 background:
     repeating-radial-gradient(
@@ -300,7 +344,7 @@ background:
         transparent 7px
     );
 
-opacity: 0.22;
+opacity: 0.18;
 
 mix-blend-mode: soft-light;
 
@@ -360,108 +404,160 @@ HEADER / NAVIGATION
 ========================================================= */
 
 /*
-Gives the navigation a stable surface without looking like
-a giant opaque box.
+IMPORTANT:
+Keep the navigation solid white.
+
+We specifically target the header belonging directly
+to .site-container so this does not interfere with
+project-page elements.
 */
 
-header {
+.site-container > header {
 position: relative;
+
+
 z-index: 10;
 
+background: #ffffff;
 
-background: rgba(255, 255, 255, 0.60);
-
-backdrop-filter: blur(14px);
--webkit-backdrop-filter: blur(14px);
-
-border-bottom: 1px solid rgba(40, 40, 50, 0.08);
+border-bottom:
+    1px solid rgba(40, 40, 50, 0.08);
 
 
 }
 
-header nav {
+.site-container > header nav {
 position: relative;
 }
 
 /* =========================================================
-CONTENT READABILITY
+GENERAL CONTENT
 ========================================================= */
-
-/*
-If your existing theme uses dark text, this reinforces it
-without changing the theme's typography.
-*/
 
 main {
 position: relative;
+
+
 z-index: 1;
+
+
+}
+
+/* =========================================================
+PROJECT / ART PAGE SURFACE
+========================================================= */
+
+.project-page {
+width: min(1000px, 92%);
+
+
+margin: 0 auto;
+
+
 }
 
 /*
-Give long-form project/art pages a slightly more stable
-reading surface.
+This is the translucent white panel behind the actual
+game/art page.
 
-The background remains visible around it.
+It is deliberately narrower than the screen, with
+margins on both sides.
 */
 
 .project-post,
 .art-post {
-background: rgba(255, 255, 255, 0.58);
+width: 100%;
+max-width: 1000px;
 
 
-backdrop-filter: blur(12px);
--webkit-backdrop-filter: blur(12px);
+margin: 3rem auto;
 
-border-radius: 12px;
+padding: 2.5rem 3rem;
+
+background: rgba(255, 255, 255, 0.38);
+
+backdrop-filter: blur(14px);
+-webkit-backdrop-filter: blur(14px);
+
+border:
+    1px solid rgba(40, 40, 50, 0.06);
+
+border-radius: 14px;
 
 
 }
 
 /* =========================================================
-PROJECT / ART CARDS
+PROJECT PAGE HEADER
 ========================================================= */
 
-.project-card {
-background: rgba(255, 255, 255, 0.50);
+.project-post-header {
+margin-bottom: 3rem;
 
 
-backdrop-filter: blur(10px);
--webkit-backdrop-filter: blur(10px);
+padding-bottom: 1.5rem;
 
-border-radius: 10px;
-
-border: 1px solid rgba(40, 40, 50, 0.07);
+border-bottom:
+    1px solid rgba(40, 40, 50, 0.10);
 
 
 }
 
-.project-card-content {
-padding: 1rem 1.1rem 1.2rem;
+.project-post-header h1 {
+margin: 0 0 0.5rem 0;
 }
 
-/*
-Slightly stronger surface on hover.
-*/
+.project-post-header time {
+display: block;
 
-.project-card:hover {
-background: rgba(255, 255, 255, 0.68);
+
+margin: 0;
+
+font-size: 0.9rem;
+
+opacity: 0.65;
+
+
 }
 
 /* =========================================================
-GENERAL TEXT SAFETY
+PROJECT CONTENT
 ========================================================= */
 
+.project-content {
+width: 100%;
+}
+
+.project-content h1,
+.project-content h2,
+.project-content h3,
+.project-content h4 {
+margin-top: 2.5rem;
+
+
+margin-bottom: 1rem;
+
+
+}
+
 /*
-Do not force a new font.
-Just make sure the inherited theme text remains readable.
+Don't add unnecessary space if the first Markdown
+element is a heading.
 */
 
-.project-card h2,
-.project-card p,
-.project-card time,
-.project-content,
-.art-content {
-position: relative;
+.project-content > h1:first-child,
+.project-content > h2:first-child,
+.project-content > h3:first-child {
+margin-top: 0;
+}
+
+.project-content p {
+margin-top: 0;
+
+
+margin-bottom: 1.25rem;
+
+
 }
 
 /* =========================================================
@@ -469,10 +565,11 @@ POST NAVIGATION
 ========================================================= */
 
 .post-navigation {
-position: relative;
+width: min(1000px, 92%);
 
 
-margin-top: 2rem;
+margin: 2rem auto;
+
 padding: 1rem;
 
 background: rgba(255, 255, 255, 0.50);
@@ -481,6 +578,40 @@ backdrop-filter: blur(10px);
 -webkit-backdrop-filter: blur(10px);
 
 border-radius: 10px;
+
+
+}
+
+/* =========================================================
+RESPONSIVE PROJECT PAGE
+========================================================= */
+
+@media (max-width: 1060px) {
+
+
+.project-post,
+.art-post {
+    width: calc(100% - 2rem);
+
+    padding: 2rem;
+}
+
+
+}
+
+@media (max-width: 600px) {
+
+
+.project-post,
+.art-post {
+    width: calc(100% - 1rem);
+
+    padding: 1.5rem;
+
+    margin: 1.5rem auto;
+
+    border-radius: 10px;
+}
 
 
 }
@@ -501,74 +632,4 @@ REDUCED MOTION
 }
 
 
-}
-
-
-/* =========================================================
-PROJECT PAGE HEADER
-========================================================= */
-
-.project-post-header {
-margin-bottom: 3rem;
-padding-bottom: 1.5rem;
-
-
-border-bottom: 1px solid rgba(40, 40, 50, 0.10);
-
-
-}
-
-/* Project title */
-
-.project-post-header h1 {
-margin: 0 0 0.5rem 0;
-}
-
-/* Project date */
-
-.project-post-header time {
-display: block;
-
-
-margin: 0;
-
-font-size: 0.9rem;
-opacity: 0.65;
-
-
-}
-
-/* =========================================================
-PROJECT CONTENT
-========================================================= */
-
-/*
-Markdown headings need their own spacing so that the first
-heading does not run into the project metadata.
-*/
-
-.project-content h1,
-.project-content h2,
-.project-content h3,
-.project-content h4 {
-margin-top: 2.5rem;
-margin-bottom: 1rem;
-}
-
-/*
-The first heading should have less top margin because the
-project header already provides separation.
-*/
-
-.project-content > h1:first-child,
-.project-content > h2:first-child,
-.project-content > h3:first-child {
-margin-top: 0;
-}
-
-/* Normal paragraphs */
-
-.project-content p {
-margin-top: 0;
-margin-bottom: 1.25rem;
 }
