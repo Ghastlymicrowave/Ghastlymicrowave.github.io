@@ -502,3 +502,73 @@ REDUCED MOTION
 
 
 }
+
+
+/* =========================================================
+PROJECT PAGE HEADER
+========================================================= */
+
+.project-post-header {
+margin-bottom: 3rem;
+padding-bottom: 1.5rem;
+
+
+border-bottom: 1px solid rgba(40, 40, 50, 0.10);
+
+
+}
+
+/* Project title */
+
+.project-post-header h1 {
+margin: 0 0 0.5rem 0;
+}
+
+/* Project date */
+
+.project-post-header time {
+display: block;
+
+
+margin: 0;
+
+font-size: 0.9rem;
+opacity: 0.65;
+
+
+}
+
+/* =========================================================
+PROJECT CONTENT
+========================================================= */
+
+/*
+Markdown headings need their own spacing so that the first
+heading does not run into the project metadata.
+*/
+
+.project-content h1,
+.project-content h2,
+.project-content h3,
+.project-content h4 {
+margin-top: 2.5rem;
+margin-bottom: 1rem;
+}
+
+/*
+The first heading should have less top margin because the
+project header already provides separation.
+*/
+
+.project-content > h1:first-child,
+.project-content > h2:first-child,
+.project-content > h3:first-child {
+margin-top: 0;
+}
+
+/* Normal paragraphs */
+
+.project-content p {
+margin-top: 0;
+margin-bottom: 1.25rem;
+}
