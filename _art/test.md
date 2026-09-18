@@ -1,4 +1,5 @@
 ---
+layout: art
 title: Cool Drawing
 date: 2026-09-17
 image: /assets/images/perchanced.png

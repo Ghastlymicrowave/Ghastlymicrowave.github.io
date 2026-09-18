@@ -1,8 +1,8 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <title>{{ page.title }} — {{ site.title }}</title>
 
@@ -14,33 +14,36 @@
 
 <header>
     <a href="{{ '/' | relative_url }}">{{ site.title }}</a>
+
     <nav>
         <a href="{{ '/projects/' | relative_url }}">Games</a>
         <a href="{{ '/art/' | relative_url }}">Art</a>
     </nav>
 </header>
 
-<main class="project-page">
+<main>
 
-    <h1>{{ page.title }}</h1>
+    <article class="project-post">
 
-    {% if page.thumbnail %}
-        <img
-            class="project-hero"
-            src="{{ page.thumbnail | relative_url }}"
-            alt="{{ page.title }}"
-        >
-    {% endif %}
+        <header class="project-post-header">
+            <h1>{{ page.title }}</h1>
 
-    {% if page.description %}
-        <p class="project-description">
-            {{ page.description }}
-        </p>
-    {% endif %}
+            {% if page.date %}
+            <time datetime="{{ page.date | date_to_xmlschema }}">
+                {{ page.date | date: "%B %d, %Y" }}
+            </time>
+            {% endif %}
+        </header>
 
-    <div class="project-content">
-        {{ content }}
-    </div>
+        <div class="project-content">
+            {{ content }}
+        </div>
+
+    </article>
+
+    <nav class="post-navigation">
+        <a href="{{ '/projects/' | relative_url }}">← Back to Games</a>
+    </nav>
 
 </main>
 

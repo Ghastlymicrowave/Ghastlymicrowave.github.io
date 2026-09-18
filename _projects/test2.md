@@ -1,4 +1,5 @@
 ---
+layout: project
 title: My Awesome Game
 date: 2026-09-17
 image: /assets/images/perchanced.png

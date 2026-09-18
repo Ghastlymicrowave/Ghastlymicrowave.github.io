@@ -1,6 +1,7 @@
 ---
-title: My Awesome Game
-date: 2026-09-17
+layout: project
+title: Bloobo
+date: 5/8/2023
 image: /assets/projects/bloobo/bloobo_happy.png
 description: A short description of my game.
 ---
