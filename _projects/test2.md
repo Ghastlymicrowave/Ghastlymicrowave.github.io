@@ -1,8 +1,8 @@
 ---
-title: This is another placeholder game
-description: uhhh this is a placeholder i'll replace it with something else later
-thumbnail: "/assets/images/perchanced.png"
-featured: true
+title: My Awesome Game
+date: 2026-09-17
+image: /assets/images/perchanced.png
+description: A short description of my game.
 ---
 
 ## Overview
