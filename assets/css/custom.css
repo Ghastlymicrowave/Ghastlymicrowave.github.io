@@ -9,7 +9,7 @@ body {
     margin: 0;
     padding: 0;
 
-    background: #e9e7f0;
+    background: transparent;
 }
 
 body {
@@ -41,34 +41,34 @@ body::before {
 
     position: fixed;
 
-    inset: -30%;
+    inset: -20%;
 
-    z-index: -2;
+    z-index: -1;
 
     pointer-events: none;
 
     background:
         radial-gradient(
-            ellipse 38% 42% at 8% 15%,
-            rgba(145, 70, 255, 0.90),
+            ellipse 32% 38% at 10% 15%,
+            rgba(145, 70, 255, 0.95),
             transparent 70%
         ),
 
         radial-gradient(
-            ellipse 40% 38% at 92% 12%,
-            rgba(30, 125, 255, 0.90),
+            ellipse 35% 32% at 90% 10%,
+            rgba(30, 125, 255, 0.95),
             transparent 70%
         ),
 
         radial-gradient(
-            ellipse 38% 42% at 88% 92%,
-            rgba(255, 50, 165, 0.88),
+            ellipse 32% 38% at 88% 90%,
+            rgba(255, 50, 165, 0.92),
             transparent 70%
         ),
 
         radial-gradient(
-            ellipse 40% 38% at 8% 90%,
-            rgba(15, 210, 170, 0.88),
+            ellipse 35% 32% at 10% 90%,
+            rgba(15, 210, 170, 0.92),
             transparent 70%
         ),
 
@@ -80,107 +80,67 @@ body::before {
             #f0c8df
         );
 
-    filter: blur(10px);
+    background-size:
+        130% 130%,
+        140% 140%,
+        135% 135%,
+        140% 140%,
+        100% 100%;
 
-    transform: scale(1.15);
+    filter: blur(8px);
 
-    animation:
-        color-field 10s ease-in-out infinite alternate;
-}
-
-
-body::after {
-    content: "";
-
-    position: fixed;
-
-    inset: -10%;
-
-    z-index: -1;
-
-    pointer-events: none;
-
-    background:
-        radial-gradient(
-            circle at 25% 30%,
-            rgba(255, 255, 255, 0.20),
-            transparent 25%
-        ),
-
-        radial-gradient(
-            circle at 75% 65%,
-            rgba(255, 255, 255, 0.14),
-            transparent 28%
-        );
-
-    mix-blend-mode: soft-light;
-
-    opacity: 0.8;
-
-    animation:
-        light-shift 13s ease-in-out infinite alternate;
+    animation: color-field 12s ease-in-out infinite alternate;
 }
 
 
 @keyframes color-field {
 
     0% {
-        transform:
-            translate3d(-7%, -5%, 0)
-            scale(1.15)
-            rotate(-1deg);
+        background-position:
+            0% 0%,
+            100% 0%,
+            100% 100%,
+            0% 100%,
+            50% 50%;
     }
 
     25% {
-        transform:
-            translate3d(4%, -8%, 0)
-            scale(1.20)
-            rotate(1deg);
+        background-position:
+            18% 12%,
+            82% 18%,
+            90% 78%,
+            12% 88%,
+            50% 50%;
     }
 
     50% {
-        transform:
-            translate3d(8%, 5%, 0)
-            scale(1.14)
-            rotate(-1deg);
+        background-position:
+            30% 25%,
+            70% 30%,
+            75% 65%,
+            25% 75%,
+            50% 50%;
     }
 
     75% {
-        transform:
-            translate3d(-3%, 9%, 0)
-            scale(1.22)
-            rotate(1deg);
+        background-position:
+            12% 35%,
+            88% 25%,
+            65% 85%,
+            35% 65%,
+            50% 50%;
     }
 
     100% {
-        transform:
-            translate3d(-9%, -2%, 0)
-            scale(1.17)
-            rotate(-1deg);
+        background-position:
+            25% 5%,
+            75% 15%,
+            85% 70%,
+            15% 90%,
+            50% 50%;
     }
 }
 
-
-@keyframes light-shift {
-
-    0% {
-        transform:
-            translate3d(-5%, -3%, 0)
-            scale(1);
-    }
-
-    50% {
-        transform:
-            translate3d(6%, 4%, 0)
-            scale(1.08);
-    }
-
-    100% {
-        transform:
-            translate3d(-3%, 7%, 0)
-            scale(1.02);
-    }
-}
 
 
 /* =========================================================
