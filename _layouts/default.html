@@ -1,46 +1,58 @@
 ---
+
 ---
 
 <!DOCTYPE html>
+
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <title>
-        {% if page.title == "Home" %}
-            {{ site.title }}
-        {% else %}
-            {{ page.title }} | {{ site.title }}
-        {% endif %}
-    </title>
 
-    <meta name="description" content="{{ site.description }}">
+<title>
+    {% if page.title == "Home" %}
+        {{ site.title }}
+    {% else %}
+        {{ page.title }} | {{ site.title }}
+    {% endif %}
+</title>
 
-    <link rel="stylesheet"
-          href="{{ '/assets/css/all.css' | relative_url }}">
+<meta name="description" content="{{ site.description }}">
 
-    {% seo %}
+<!-- Main Portfolio Jekyll Theme stylesheet -->
+<link rel="stylesheet"
+      href="{{ '/assets/css/all.css' | relative_url }}">
+
+<!-- Custom site styles -->
+<link rel="stylesheet"
+      href="{{ '/assets/css/custom.css' | relative_url }}">
+
+{% seo %}
+
+
 </head>
 
 <body>
 
-    <div class="site-container">
 
-        <header>
-            <nav>
-                <a href="{{ '/' | relative_url }}">Home</a>
-                <a href="{{ '/projects/' | relative_url }}">Games</a>
-                <a href="{{ '/art/' | relative_url }}">Art</a>
-                <a href="{{ '/about/' | relative_url }}">About</a>
-            </nav>
-        </header>
+<div class="site-container">
 
-        {{ content }}
+    <header>
+        <nav>
+            <a href="{{ '/' | relative_url }}">Home</a>
+            <a href="{{ '/projects/' | relative_url }}">Games</a>
+            <a href="{{ '/art/' | relative_url }}">Art</a>
+            <a href="{{ '/about/' | relative_url }}">About</a>
+        </nav>
+    </header>
 
-        {% include footer.html %}
+    {{ content }}
 
-    </div>
+    {% include footer.html %}
+
+</div>
+
 
 </body>
 </html>
