@@ -3,16 +3,22 @@ layout: default
 title: Games
 ---
 
-<main class="projects-page">
+<main class="site-main">
 
-    <h1>Games</h1>
+    <section class="projects-section">
 
-    <div class="project-grid">
+        <h1>Games</h1>
 
-        {% for project in site.projects %}
-            {% include project-card.html project=project %}
-        {% endfor %}
+        <div class="project-grid">
 
-    </div>
+            {% assign games = site.projects | sort: "date" | reverse %}
+
+            {% for project in games %}
+                {% include project-card.html project=project %}
+            {% endfor %}
+
+        </div>
+
+    </section>
 
 </main>

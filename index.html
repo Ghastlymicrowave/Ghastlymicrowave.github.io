@@ -1,44 +1,41 @@
 ---
-
 layout: default
 title: Home
 ---
 
-<main class="home">
+<main class="site-main">
+
+    <section class="projects-section">
+
+        <h1>Recent Games</h1>
+
+        <div class="project-grid">
+
+            {% assign recent_games = site.projects | sort: "date" | reverse %}
+
+            {% for project in recent_games limit: 6 %}
+                {% include project-card.html project=project %}
+            {% endfor %}
+
+        </div>
+
+    </section>
 
 
-<section class="projects-section">
+    <section class="projects-section">
 
-    <h1>Recent Games</h1>
+        <h1>Recent Art</h1>
 
-    <div class="project-grid">
+        <div class="project-grid">
 
-        {% assign recent_games = site.projects | sort: "date" | reverse %}
+            {% assign recent_art = site.art | sort: "date" | reverse %}
 
-        {% for project in recent_games limit: 6 %}
-            {% include project-card.html project=project %}
-        {% endfor %}
+            {% for artwork in recent_art limit: 6 %}
+                {% include project-card.html project=artwork %}
+            {% endfor %}
 
-    </div>
+        </div>
 
-</section>
-
-
-<section class="projects-section">
-
-    <h1>Recent Art</h1>
-
-    <div class="project-grid">
-
-        {% assign recent_art = site.art | sort: "date" | reverse %}
-
-        {% for artwork in recent_art limit: 6 %}
-            {% include project-card.html project=artwork %}
-        {% endfor %}
-
-    </div>
-
-</section>
-
+    </section>
 
 </main>

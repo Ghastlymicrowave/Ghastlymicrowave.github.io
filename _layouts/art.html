@@ -2,32 +2,28 @@
 layout: default
 ---
 
-<main>
+<main class="detail-page">
 
+    <article class="art-post">
 
-<article class="art-post">
+        <div class="art-post-header">
+            <h1>{{ page.title }}</h1>
 
-    <header class="art-post-header">
-        <h1>{{ page.title }}</h1>
+            {% if page.date %}
+                <time datetime="{{ page.date | date_to_xmlschema }}">
+                    {{ page.date | date: "%B %d, %Y" }}
+                </time>
+            {% endif %}
+        </div>
 
-        <br>
-        {% if page.date %}
-        <time datetime="{{ page.date | date_to_xmlschema }}">
-            {{ page.date | date: "%B %d, %Y" }}
-        </time>
-        <br>
-        {% endif %}
-    </header>
+        <div class="art-content">
+            {{ content }}
+        </div>
 
-    <div class="art-content">
-        {{ content }}
-    </div>
+    </article>
 
-</article>
-
-<nav class="post-navigation">
-    <a href="{{ '/art/' | relative_url }}">← Back to Art</a>
-</nav>
-
+    <nav class="post-navigation">
+        <a href="{{ '/art/' | relative_url }}">← Back to Art</a>
+    </nav>
 
 </main>
