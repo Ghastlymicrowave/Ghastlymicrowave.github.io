@@ -17,13 +17,7 @@ body {
 }
 
 
-/*
-   Override the theme's 750px container.
-
-   The original theme constrains the entire website to
-   750px. This prevents wide-screen content from being
-   centered against the viewport.
-*/
+/* Override the original theme's 750px container */
 
 .site-container {
     width: 100% !important;
@@ -90,7 +84,8 @@ body::before {
 
     transform: scale(1.15);
 
-    animation: color-field 18s ease-in-out infinite alternate;
+    animation:
+        color-field 18s ease-in-out infinite alternate;
 }
 
 
@@ -122,7 +117,8 @@ body::after {
 
     opacity: 0.8;
 
-    animation: light-shift 13s ease-in-out infinite alternate;
+    animation:
+        light-shift 13s ease-in-out infinite alternate;
 }
 
 
@@ -224,8 +220,6 @@ body::after {
 }
 
 
-/* Each section gets its own panel */
-
 .site-main .projects-section {
     box-sizing: border-box;
 
@@ -251,8 +245,6 @@ body::after {
     margin-bottom: 0;
 }
 
-
-/* Section headings */
 
 .site-main .projects-section > h1 {
     margin-top: 0;
@@ -338,24 +330,60 @@ body::after {
    DETAIL PAGES
    ========================================================= */
 
+/*
+   The original theme gives some content elements their
+   own fixed widths and margins.
+
+   Explicitly reset those here so project and art pages
+   are centered against the viewport.
+*/
+
 .detail-page {
     box-sizing: border-box;
 
-    width: clamp(320px, 44vw, 900px);
+    display: block;
 
-    margin: 3rem auto;
+    width: min(48vw, 960px);
+
+    max-width: calc(100vw - 2rem);
+
+    margin: 3rem auto !important;
+
+    padding: 0;
+
+    position: relative;
+
+    left: auto;
+
+    right: auto;
+
+    transform: none;
 }
 
 
-/* Project / Art glass panel */
+/* Reset theme content sizing */
+
+.detail-page .page-content,
+.detail-page .post-content,
+.detail-page .post,
+.detail-page article {
+    box-sizing: border-box;
+}
+
+
+/* Actual glass panel */
 
 .project-post,
 .art-post {
     box-sizing: border-box;
 
-    width: 100%;
+    display: block;
 
-    margin: 0 auto;
+    width: 100% !important;
+
+    max-width: none !important;
+
+    margin: 0 auto !important;
 
     padding: 2.5rem 3rem;
 
@@ -410,7 +438,11 @@ body::after {
 
 .project-content,
 .art-content {
-    width: 100%;
+    width: 100% !important;
+
+    max-width: none !important;
+
+    margin: 0 !important;
 }
 
 
@@ -593,7 +625,9 @@ body::after {
     .detail-page {
         width: calc(100% - 1rem);
 
-        margin: 1.5rem auto;
+        max-width: none;
+
+        margin: 1.5rem auto !important;
     }
 
 
