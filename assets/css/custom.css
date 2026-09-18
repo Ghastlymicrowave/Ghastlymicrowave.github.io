@@ -1,635 +1,583 @@
+css
 /* =========================================================
-PROJECT / ART GRIDS
-========================================================= */
+   PROJECT / ART GRIDS
+   ========================================================= */
 
 .project-grid {
-display: grid;
-grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-gap: 2rem;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
 
+    width: 95%;
+    max-width: 1400px;
 
-width: 95%;
-max-width: 1400px;
-
-margin: 0 auto;
-
-
+    margin: 0 auto;
 }
 
 .project-card {
-display: block;
+    display: block;
 
+    text-decoration: none;
+    color: inherit;
 
-text-decoration: none;
-color: inherit;
+    overflow: hidden;
 
-overflow: hidden;
+    background: rgba(255, 255, 255, 0.55);
 
-background: rgba(255, 255, 255, 0.50);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
 
-backdrop-filter: blur(10px);
--webkit-backdrop-filter: blur(10px);
+    border: 1px solid rgba(40, 40, 50, 0.08);
+    border-radius: 10px;
 
-border: 1px solid rgba(40, 40, 50, 0.07);
-border-radius: 10px;
-
-transition:
-    transform 0.25s ease,
-    background-color 0.25s ease;
-
-
+    transition:
+        transform 0.25s ease,
+        background-color 0.25s ease;
 }
 
 .project-card:hover {
-transform: translateY(-4px);
-background: rgba(255, 255, 255, 0.68);
+    transform: translateY(-4px);
+    background: rgba(255, 255, 255, 0.72);
 }
 
 .project-card img {
-display: block;
+    display: block;
 
+    width: 100%;
+    aspect-ratio: 16 / 9;
 
-width: 100%;
-aspect-ratio: 16 / 9;
-
-object-fit: cover;
-
-
+    object-fit: cover;
 }
 
 .project-card-content {
-padding: 1rem 1.1rem 1.2rem;
+    padding: 1rem 1.1rem 1.2rem;
 }
 
+
 /* =========================================================
-OLDER .projects GRID
-========================================================= */
+   OLDER .projects GRID
+   ========================================================= */
 
 .projects {
-display: grid;
+    display: grid;
 
+    grid-template-columns:
+        repeat(auto-fit, minmax(320px, 1fr));
 
-grid-template-columns:
-    repeat(auto-fit, minmax(320px, 1fr));
+    gap: 2rem;
 
-gap: 2rem;
+    width: min(1400px, 95%);
 
-width: min(1400px, 95%);
-
-margin: 0 auto;
-
-
+    margin: 0 auto;
 }
 
 @media (max-width: 900px) {
-
-
-.projects {
-    grid-template-columns: repeat(2, 1fr);
-}
-
-
+    .projects {
+        grid-template-columns: repeat(2, 1fr);
+    }
 }
 
 @media (max-width: 600px) {
-
-
-.projects {
-    grid-template-columns: 1fr;
+    .projects {
+        grid-template-columns: 1fr;
+    }
 }
 
-
-}
 
 /* =========================================================
-VIDEOS
-========================================================= */
+   VIDEOS
+   ========================================================= */
 
 .youtube-embed {
-position: relative;
+    position: relative;
 
+    width: 100%;
+    max-width: 900px;
 
-width: 100%;
-max-width: 900px;
+    aspect-ratio: 16 / 9;
 
-aspect-ratio: 16 / 9;
-
-margin: 2rem auto;
-
-
+    margin: 2rem auto;
 }
 
 .youtube-embed iframe {
-display: block;
+    display: block;
 
+    width: 100%;
+    height: 100%;
 
-width: 100%;
-height: 100%;
-
-border: 0;
-
-
+    border: 0;
 }
 
 .portfolio-video {
-width: 100%;
-max-width: 900px;
+    width: 100%;
+    max-width: 900px;
 
-
-margin: 2rem auto;
-
-
+    margin: 2rem auto;
 }
 
 .portfolio-video video {
-display: block;
+    display: block;
 
-
-width: 100%;
-height: auto;
-
-
+    width: 100%;
+    height: auto;
 }
 
+
 /* =========================================================
-REGULAR IMAGES
-========================================================= */
+   REGULAR IMAGES
+   ========================================================= */
 
 .project-content img,
 .art-content img {
-display: block;
+    display: block;
 
+    width: 100%;
+    max-width: 900px;
 
-width: 100%;
-max-width: 900px;
+    height: auto;
 
-height: auto;
-
-margin: 2rem auto;
-
-
+    margin: 2rem auto;
 }
 
+
 /* =========================================================
-IMAGE GALLERIES
-========================================================= */
+   IMAGE GALLERIES
+   ========================================================= */
 
 .image-grid {
-display: grid;
+    display: grid;
 
+    grid-template-columns:
+        repeat(2, minmax(0, 1fr));
 
-grid-template-columns:
-    repeat(2, minmax(0, 1fr));
+    gap: 1rem;
 
-gap: 1rem;
+    width: 100%;
+    max-width: 1000px;
 
-width: 100%;
-max-width: 1000px;
-
-margin: 2rem auto;
-
-
+    margin: 2rem auto;
 }
 
 .image-grid img {
-display: block;
+    display: block;
 
+    width: 100%;
+    height: auto;
 
-width: 100%;
-height: auto;
-
-margin: 0;
-
-
+    margin: 0;
 }
 
 @media (max-width: 600px) {
-
-
-.image-grid {
-    grid-template-columns: 1fr;
+    .image-grid {
+        grid-template-columns: 1fr;
+    }
 }
 
-
-}
 
 /* =========================================================
-AMBIENT BACKGROUND
-========================================================= */
+   PAGE BACKGROUND
+   ========================================================= */
+
+/*
+   The body itself is transparent.
+
+   The animated background sits behind the entire page.
+*/
+
+html,
+body {
+    min-height: 100%;
+
+    background: transparent;
+}
 
 body {
-min-height: 100vh;
-
-
-background: #eeeef2;
-
-
+    margin: 0;
 }
+
+
+/* =========================================================
+   SITE CONTAINER
+   ========================================================= */
+
+/*
+   IMPORTANT:
+
+   Do NOT give .site-container a solid background.
+   The animated background must remain visible through it.
+*/
 
 .site-container {
-position: relative;
-isolation: isolate;
+    position: relative;
+    isolation: isolate;
 
+    min-height: 100vh;
 
-min-height: 100vh;
-
-
+    background: transparent;
 }
 
-/*
-One continuous pastel field.
 
-The color fields overlap heavily so there are no hard
-boundaries or dark center vignette.
-*/
+/* =========================================================
+   ANIMATED BACKGROUND
+   ========================================================= */
 
 .ambient-background {
-position: fixed;
+    position: fixed;
 
+    z-index: -10;
 
-inset: -30%;
+    top: -25%;
+    left: -25%;
 
-z-index: -2;
+    width: 150%;
+    height: 150%;
 
-pointer-events: none;
+    pointer-events: none;
 
-background:
+    /*
+       One continuous pastel field.
+       All gradients overlap heavily.
+    */
 
-    /* Violet */
-    radial-gradient(
-        ellipse 80% 70% at 15% 25%,
-        rgba(175, 155, 215, 0.20) 0%,
-        rgba(175, 155, 215, 0) 70%
-    ),
+    background:
 
-    /* Blue */
-    radial-gradient(
-        ellipse 85% 75% at 85% 20%,
-        rgba(145, 185, 220, 0.18) 0%,
-        rgba(145, 185, 220, 0) 70%
-    ),
+        radial-gradient(
+            ellipse 65% 55% at 15% 20%,
+            rgba(190, 165, 235, 0.70) 0%,
+            rgba(190, 165, 235, 0.30) 35%,
+            rgba(190, 165, 235, 0.00) 75%
+        ),
 
-    /* Warm pink */
-    radial-gradient(
-        ellipse 80% 75% at 75% 85%,
-        rgba(220, 175, 195, 0.16) 0%,
-        rgba(220, 175, 195, 0) 70%
-    ),
+        radial-gradient(
+            ellipse 65% 60% at 85% 25%,
+            rgba(155, 195, 235, 0.65) 0%,
+            rgba(155, 195, 235, 0.25) 40%,
+            rgba(155, 195, 235, 0.00) 75%
+        ),
 
-    /* Mint */
-    radial-gradient(
-        ellipse 85% 70% at 15% 85%,
-        rgba(160, 205, 195, 0.15) 0%,
-        rgba(160, 205, 195, 0) 70%
-    ),
+        radial-gradient(
+            ellipse 60% 60% at 75% 85%,
+            rgba(235, 180, 210, 0.60) 0%,
+            rgba(235, 180, 210, 0.25) 40%,
+            rgba(235, 180, 210, 0.00) 75%
+        ),
 
-    /* Continuous base */
-    linear-gradient(
-        120deg,
-        #eeeef3 0%,
-        #f0edf4 25%,
-        #edf1f5 50%,
-        #f1edf1 75%,
-        #edf1ef 100%
-    );
+        radial-gradient(
+            ellipse 65% 55% at 20% 85%,
+            rgba(160, 215, 205, 0.60) 0%,
+            rgba(160, 215, 205, 0.25) 40%,
+            rgba(160, 215, 205, 0.00) 75%
+        ),
 
-filter: blur(35px);
+        linear-gradient(
+            135deg,
+            #e9e4f2 0%,
+            #e8edf5 25%,
+            #e8f0ed 50%,
+            #f0e8ef 75%,
+            #e9e5f2 100%
+        );
 
-transform: scale(1.15);
+    filter: blur(30px);
 
-animation:
-    ambient-drift 35s ease-in-out infinite alternate;
+    transform: scale(1.05);
 
-
+    animation: ambient-drift 32s ease-in-out infinite alternate;
 }
 
-/*
-Uniform light veil.
-
-This keeps the background subdued without creating
-a darker center.
-*/
-
-.ambient-background::after {
-content: "";
-
-
-position: absolute;
-inset: 0;
-
-background: rgba(245, 245, 248, 0.28);
-
-pointer-events: none;
-
-
-}
 
 /*
-Very subtle texture.
+   Very subtle texture over the colors.
+
+   This is intentionally weak so it does not become
+   distracting noise.
 */
 
 .ambient-background::before {
-content: "";
+    content: "";
 
+    position: absolute;
 
-position: absolute;
-inset: 0;
+    inset: 0;
 
-background:
-    repeating-radial-gradient(
-        circle at 40% 40%,
-        rgba(255, 255, 255, 0.035) 0,
-        rgba(255, 255, 255, 0.035) 1px,
-        transparent 1px,
-        transparent 7px
-    );
+    background:
+        repeating-radial-gradient(
+            circle at 35% 40%,
+            rgba(255, 255, 255, 0.10) 0,
+            rgba(255, 255, 255, 0.10) 1px,
+            transparent 1px,
+            transparent 8px
+        );
 
-opacity: 0.18;
+    opacity: 0.22;
 
-mix-blend-mode: soft-light;
+    mix-blend-mode: soft-light;
 
-pointer-events: none;
-
-
+    pointer-events: none;
 }
 
+
+/*
+   No dark center.
+   No opaque veil.
+   This layer is only a tiny amount of white
+   to keep the pastel colors soft.
+*/
+
+.ambient-background::after {
+    content: "";
+
+    position: absolute;
+
+    inset: 0;
+
+    background: rgba(255, 255, 255, 0.06);
+
+    pointer-events: none;
+}
+
+
 /* =========================================================
-BACKGROUND MOTION
-========================================================= */
+   BACKGROUND ANIMATION
+   ========================================================= */
 
 @keyframes ambient-drift {
 
+    0% {
+        transform:
+            translate3d(-3%, -2%, 0)
+            scale(1.05);
+    }
 
-0% {
-    transform:
-        translate3d(-2%, -1%, 0)
-        scale(1.15);
+    20% {
+        transform:
+            translate3d(2%, -4%, 0)
+            scale(1.08);
+    }
+
+    40% {
+        transform:
+            translate3d(4%, 2%, 0)
+            scale(1.04);
+    }
+
+    60% {
+        transform:
+            translate3d(-1%, 4%, 0)
+            scale(1.09);
+    }
+
+    80% {
+        transform:
+            translate3d(-4%, 1%, 0)
+            scale(1.06);
+    }
+
+    100% {
+        transform:
+            translate3d(2%, -2%, 0)
+            scale(1.05);
+    }
 }
 
-20% {
-    transform:
-        translate3d(1%, -3%, 0)
-        scale(1.17);
-}
-
-40% {
-    transform:
-        translate3d(3%, 1%, 0)
-        scale(1.14);
-}
-
-60% {
-    transform:
-        translate3d(0%, 3%, 0)
-        scale(1.18);
-}
-
-80% {
-    transform:
-        translate3d(-3%, 1%, 0)
-        scale(1.16);
-}
-
-100% {
-    transform:
-        translate3d(1%, -1%, 0)
-        scale(1.15);
-}
-
-
-}
 
 /* =========================================================
-HEADER / NAVIGATION
-========================================================= */
-
-/*
-IMPORTANT:
-Keep the navigation solid white.
-
-We specifically target the header belonging directly
-to .site-container so this does not interfere with
-project-page elements.
-*/
+   HEADER / NAVIGATION
+   ========================================================= */
 
 .site-container > header {
-position: relative;
+    position: relative;
 
+    z-index: 10;
 
-z-index: 10;
+    background: #ffffff;
 
-background: #ffffff;
-
-border-bottom:
-    1px solid rgba(40, 40, 50, 0.08);
-
-
+    border-bottom:
+        1px solid rgba(40, 40, 50, 0.08);
 }
 
 .site-container > header nav {
-position: relative;
+    position: relative;
 }
 
+
 /* =========================================================
-GENERAL CONTENT
-========================================================= */
+   GENERAL CONTENT
+   ========================================================= */
 
 main {
-position: relative;
+    position: relative;
 
-
-z-index: 1;
-
-
+    z-index: 1;
 }
+
 
 /* =========================================================
-PROJECT / ART PAGE SURFACE
-========================================================= */
+   PROJECT / ART PAGE
+   ========================================================= */
 
 .project-page {
-width: min(1000px, 92%);
+    width: min(1000px, 92%);
 
-
-margin: 0 auto;
-
-
+    margin: 0 auto;
 }
 
-/*
-This is the translucent white panel behind the actual
-game/art page.
 
-It is deliberately narrower than the screen, with
-margins on both sides.
+/*
+   The page itself is translucent.
+
+   The animated background remains visible THROUGH this
+   panel instead of being replaced by a solid color.
 */
 
 .project-post,
 .art-post {
-width: 100%;
-max-width: 1000px;
+    box-sizing: border-box;
 
+    width: 100%;
+    max-width: 1000px;
 
-margin: 3rem auto;
+    margin: 3rem auto;
 
-padding: 2.5rem 3rem;
+    padding: 2.5rem 3rem;
 
-background: rgba(255, 255, 255, 0.38);
+    background: rgba(255, 255, 255, 0.30);
 
-backdrop-filter: blur(14px);
--webkit-backdrop-filter: blur(14px);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
 
-border:
-    1px solid rgba(40, 40, 50, 0.06);
+    border:
+        1px solid rgba(255, 255, 255, 0.35);
 
-border-radius: 14px;
-
-
+    border-radius: 14px;
 }
 
+
 /* =========================================================
-PROJECT PAGE HEADER
-========================================================= */
+   PROJECT PAGE HEADER
+   ========================================================= */
 
 .project-post-header {
-margin-bottom: 3rem;
+    margin-bottom: 3rem;
 
+    padding-bottom: 1.5rem;
 
-padding-bottom: 1.5rem;
-
-border-bottom:
-    1px solid rgba(40, 40, 50, 0.10);
-
-
+    border-bottom:
+        1px solid rgba(40, 40, 50, 0.10);
 }
 
 .project-post-header h1 {
-margin: 0 0 0.5rem 0;
+    margin: 0 0 0.5rem 0;
 }
 
 .project-post-header time {
-display: block;
+    display: block;
 
+    margin: 0;
 
-margin: 0;
+    font-size: 0.9rem;
 
-font-size: 0.9rem;
-
-opacity: 0.65;
-
-
+    opacity: 0.65;
 }
 
+
 /* =========================================================
-PROJECT CONTENT
-========================================================= */
+   PROJECT CONTENT
+   ========================================================= */
 
 .project-content {
-width: 100%;
+    width: 100%;
 }
 
 .project-content h1,
 .project-content h2,
 .project-content h3,
 .project-content h4 {
-margin-top: 2.5rem;
+    margin-top: 2.5rem;
 
-
-margin-bottom: 1rem;
-
-
+    margin-bottom: 1rem;
 }
-
-/*
-Don't add unnecessary space if the first Markdown
-element is a heading.
-*/
 
 .project-content > h1:first-child,
 .project-content > h2:first-child,
 .project-content > h3:first-child {
-margin-top: 0;
+    margin-top: 0;
 }
 
 .project-content p {
-margin-top: 0;
+    margin-top: 0;
 
-
-margin-bottom: 1.25rem;
-
-
+    margin-bottom: 1.25rem;
 }
 
+
 /* =========================================================
-POST NAVIGATION
-========================================================= */
+   POST NAVIGATION
+   ========================================================= */
 
 .post-navigation {
-width: min(1000px, 92%);
+    width: min(1000px, 92%);
 
+    margin: 2rem auto;
 
-margin: 2rem auto;
+    padding: 1rem;
 
-padding: 1rem;
+    background: rgba(255, 255, 255, 0.38);
 
-background: rgba(255, 255, 255, 0.50);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
 
-backdrop-filter: blur(10px);
--webkit-backdrop-filter: blur(10px);
-
-border-radius: 10px;
-
-
-}
-
-/* =========================================================
-RESPONSIVE PROJECT PAGE
-========================================================= */
-
-@media (max-width: 1060px) {
-
-
-.project-post,
-.art-post {
-    width: calc(100% - 2rem);
-
-    padding: 2rem;
-}
-
-
-}
-
-@media (max-width: 600px) {
-
-
-.project-post,
-.art-post {
-    width: calc(100% - 1rem);
-
-    padding: 1.5rem;
-
-    margin: 1.5rem auto;
+    border:
+        1px solid rgba(255, 255, 255, 0.30);
 
     border-radius: 10px;
 }
 
 
+/* =========================================================
+   RESPONSIVE PROJECT PAGE
+   ========================================================= */
+
+@media (max-width: 1060px) {
+
+    .project-post,
+    .art-post {
+        width: calc(100% - 2rem);
+
+        padding: 2rem;
+    }
+
 }
 
+@media (max-width: 600px) {
+
+    .project-post,
+    .art-post {
+        width: calc(100% - 1rem);
+
+        padding: 1.5rem;
+
+        margin: 1.5rem auto;
+
+        border-radius: 10px;
+    }
+
+}
+
+
 /* =========================================================
-REDUCED MOTION
-========================================================= */
+   REDUCED MOTION
+   ========================================================= */
 
 @media (prefers-reduced-motion: reduce) {
 
+    .ambient-background {
+        animation: none;
+    }
 
-.ambient-background {
-    animation: none;
-}
-
-.project-card {
-    transition: none;
-}
-
+    .project-card {
+        transition: none;
+    }
 
 }
+
