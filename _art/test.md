@@ -1,7 +1,9 @@
 ---
-title: this is an arts
+title: Cool Drawing
 date: 2026-09-17
-thumbnail: "/assets/images/perchanced.png"
+image: /assets/images/perchanced.png
+description: A cool drawing I made.
+layout: art
 ---
 
 uh this is art yes yeah

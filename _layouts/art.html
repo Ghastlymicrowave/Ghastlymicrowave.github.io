@@ -21,17 +21,31 @@
     </nav>
 </header>
 
-<article class="art-post">
+<main>
 
-    <h1>{{ page.title }}</h1>
+    <article class="art-post">
 
-    <time>{{ page.date | date: "%B %d, %Y" }}</time>
+        <header class="art-post-header">
+            <h1>{{ page.title }}</h1>
 
-    <div class="art-content">
-        {{ content }}
-    </div>
+            {% if page.date %}
+            <time datetime="{{ page.date | date_to_xmlschema }}">
+                {{ page.date | date: "%B %d, %Y" }}
+            </time>
+            {% endif %}
+        </header>
 
-</article>
+        <div class="art-content">
+            {{ content }}
+        </div>
+
+    </article>
+
+    <nav class="post-navigation">
+        <a href="{{ '/art/' | relative_url }}">← Back to Art</a>
+    </nav>
+
+</main>
 
 </body>
 </html>

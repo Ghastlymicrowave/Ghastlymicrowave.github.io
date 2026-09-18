@@ -1,10 +1,10 @@
-<a class="project-card" href="{{ include.project.url | relative_url }}">
+<a href="{{ include.project.url | relative_url }}" class="project-card">
 
-    {% if include.project.thumbnail %}
-        <img
-            src="{{ include.project.thumbnail | relative_url }}"
-            alt="{{ include.project.title }}"
-        >
+    {% if include.project.image %}
+        <div class="project-card-image">
+            <img src="{{ include.project.image | relative_url }}"
+                 alt="{{ include.project.title }}">
+        </div>
     {% endif %}
 
     <div class="project-card-content">
@@ -13,6 +13,12 @@
 
         {% if include.project.description %}
             <p>{{ include.project.description }}</p>
+        {% endif %}
+
+        {% if include.project.date %}
+            <time datetime="{{ include.project.date | date_to_xmlschema }}">
+                {{ include.project.date | date: "%B %d, %Y" }}
+            </time>
         {% endif %}
 
     </div>
