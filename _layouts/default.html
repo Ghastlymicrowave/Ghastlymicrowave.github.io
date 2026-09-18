@@ -20,11 +20,9 @@
 
 <meta name="description" content="{{ site.description }}">
 
-<!-- Main Portfolio Jekyll Theme stylesheet -->
 <link rel="stylesheet"
       href="{{ '/assets/css/all.css' | relative_url }}">
 
-<!-- Custom site styles -->
 <link rel="stylesheet"
       href="{{ '/assets/css/custom.css' | relative_url }}">
 
@@ -35,24 +33,26 @@
 
 <body>
 
-
 <div class="site-container">
 
-    <header>
-        <nav>
-            <a href="{{ '/' | relative_url }}">Home</a>
-            <a href="{{ '/projects/' | relative_url }}">Games</a>
-            <a href="{{ '/art/' | relative_url }}">Art</a>
-            <a href="https://ghastlymicrowave.github.io/resume/">About</a>
-        </nav>
-    </header>
 
-    {{ content }}
+<div class="ambient-background"></div>
 
-    {% include footer.html %}
+<header>
+    <nav>
+        <a href="{{ '/' | relative_url }}">Home</a>
+        <a href="{{ '/projects/' | relative_url }}">Games</a>
+        <a href="{{ '/art/' | relative_url }}">Art</a>
+        <a href="https://ghastlymicrowave.github.io/resume/">About</a>
+    </nav>
+</header>
+
+{{ content }}
+
+{% include footer.html %}
+
 
 </div>
-
 
 </body>
 </html>

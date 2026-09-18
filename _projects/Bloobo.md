@@ -5,7 +5,6 @@ date: 5/8/2023
 image: /assets/projects/bloobo/bloobo_happy.png
 description: A short description of my game.
 ---
-
 ## Overview
 
 Bloobo is a 2D Physics based platformer that I worked on as a collaboration with a team of students through USC Games.
@@ -38,7 +37,7 @@ I worked as a Tech Artist and contributed to the game's particle effects and vfx
 ## My Contributions
 
 ### Blur Shader and effects derived from it
-![visual shadergraph showing a blur shader](/assets/projects/bloobo/blurshader.png)
+![visual shadergraph showing a blur shader](/assets/projects/bloobo/blurShader.png)
 
 One of the most widely used tools I created for this game was a blur effect. Effectively I was using a script to apply a custom shader onto any image then store that. It ran once when the GameObject was loaded and created a temporary image file in data so the blur wouldn't have to run every frame at the cost of some ram. Softer and smoother looking blurs are often incredibly costly on a GPU and because this game was designed to run on phones, this was my workaround to keep it performant. 
 
