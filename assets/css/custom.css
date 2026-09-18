@@ -52,27 +52,27 @@ body::before {
 
     background:
         radial-gradient(
-            circle at 10% 10%,
+            ellipse 34% 42% at 12% 18%,
             rgba(105, 45, 180, 0.95),
-            transparent 27%
+            transparent 68%
         ),
 
         radial-gradient(
-            circle at 90% 15%,
-            rgba(145, 35, 105, 0.95),
-            transparent 28%
+            ellipse 38% 34% at 88% 15%,
+            rgba(145, 35, 105, 0.92),
+            transparent 70%
         ),
 
         radial-gradient(
-            circle at 85% 90%,
+            ellipse 34% 42% at 82% 86%,
             rgba(190, 45, 75, 0.90),
-            transparent 27%
+            transparent 68%
         ),
 
         radial-gradient(
-            circle at 10% 85%,
+            ellipse 40% 35% at 15% 88%,
             rgba(75, 35, 125, 0.95),
-            transparent 30%
+            transparent 70%
         ),
 
         linear-gradient(
@@ -85,8 +85,10 @@ body::before {
 
     filter: blur(18px);
 
+    transform-origin: center center;
+
     animation:
-        background-drift 8s ease-in-out infinite alternate;
+        background-drift 24s ease-in-out infinite alternate;
 }
 
 
@@ -94,44 +96,23 @@ body::before {
 
     0% {
         transform:
-            translate(-10%, -8%)
-            rotate(-3deg)
-            scale(1);
-    }
-
-    20% {
-        transform:
-            translate(4%, -12%)
-            rotate(2deg)
-            scale(1.06);
-    }
-
-    40% {
-        transform:
-            translate(12%, 2%)
-            rotate(-2deg)
-            scale(1.02);
-    }
-
-    60% {
-        transform:
-            translate(3%, 12%)
-            rotate(3deg)
-            scale(1.08);
-    }
-
-    80% {
-        transform:
-            translate(-12%, 5%)
-            rotate(-2deg)
+            translate3d(-4%, -3%, 0)
+            rotate(-1deg)
             scale(1.04);
+    }
+
+    50% {
+        transform:
+            translate3d(4%, 3%, 0)
+            rotate(1.5deg)
+            scale(1.10);
     }
 
     100% {
         transform:
-            translate(-8%, -10%)
-            rotate(3deg)
-            scale(1.10);
+            translate3d(-2%, 5%, 0)
+            rotate(-0.5deg)
+            scale(1.06);
     }
 }
 
@@ -156,6 +137,78 @@ body::before {
     border-bottom:
         1px solid rgba(40, 40, 50, 0.08);
 }
+
+
+/* =========================================================
+   HEADER CONTENT
+   ========================================================= */
+
+.site-header-inner {
+    display: flex;
+
+    align-items: center;
+    justify-content: space-between;
+
+    width: min(1100px, 92vw);
+
+    min-height: 72px;
+
+    margin: 0 auto;
+
+    box-sizing: border-box;
+}
+
+
+.site-title {
+    display: block;
+
+    color: #333;
+
+    font-size: 1.25rem;
+    font-weight: 700;
+
+    text-decoration: none;
+
+    white-space: nowrap;
+}
+
+
+.site-header nav {
+    display: flex;
+
+    align-items: center;
+
+    gap: 1.5rem;
+}
+
+
+.site-header nav a {
+    text-decoration: none;
+}
+
+
+/* =========================================================
+   HEADER MOBILE
+   ========================================================= */
+
+@media (max-width: 700px) {
+
+    .site-header-inner {
+        width: calc(100% - 2rem);
+
+        min-height: 64px;
+    }
+
+    .site-title {
+        font-size: 1rem;
+    }
+
+    .site-header nav {
+        gap: 0.8rem;
+    }
+}
+
+
 
 
 /* =========================================================

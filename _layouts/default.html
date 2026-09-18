@@ -35,13 +35,23 @@
 
 <div class="site-container">
 
-<header>
-    <nav>
-        <a href="{{ '/' | relative_url }}">Home</a>
-        <a href="{{ '/projects/' | relative_url }}">Games</a>
-        <a href="{{ '/art/' | relative_url }}">Art</a>
-        <a href="https://ghastlymicrowave.github.io/resume/">About</a>
-    </nav>
+<header class="site-header">
+
+    <div class="site-header-inner">
+
+        <a href="{{ '/' | relative_url }}" class="site-title">
+            Guinevere Vaughan
+        </a>
+
+        <nav>
+            <a href="{{ '/' | relative_url }}">Home</a>
+            <a href="{{ '/projects/' | relative_url }}">Games</a>
+            <a href="{{ '/art/' | relative_url }}">Art</a>
+            <a href="https://ghastlymicrowave.github.io/resume/">About</a>
+        </nav>
+
+    </div>
+
 </header>
 
 {{ content }}
