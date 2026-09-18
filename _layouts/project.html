@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>{{ page.title }} — {{ site.title }}</title>
+
+    <link rel="stylesheet"
+          href="{{ '/assets/css/style.css' | relative_url }}">
+</head>
+
+<body>
+
+<header>
+    <a href="{{ '/' | relative_url }}">{{ site.title }}</a>
+    <nav>
+        <a href="{{ '/projects/' | relative_url }}">Games</a>
+        <a href="{{ '/art/' | relative_url }}">Art</a>
+    </nav>
+</header>
+
+<main class="project-page">
+
+    <h1>{{ page.title }}</h1>
+
+    {% if page.thumbnail %}
+        <img
+            class="project-hero"
+            src="{{ page.thumbnail | relative_url }}"
+            alt="{{ page.title }}"
+        >
+    {% endif %}
+
+    {% if page.description %}
+        <p class="project-description">
+            {{ page.description }}
+        </p>
+    {% endif %}
+
+    <div class="project-content">
+        {{ content }}
+    </div>
+
+</main>
+
+</body>
+</html>

@@ -1,0 +1,31 @@
+.project-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 2rem;
+}
+
+.project-card {
+    display: block;
+    text-decoration: none;
+    color: inherit;
+
+    border: 1px solid #ddd;
+    border-radius: 12px;
+    overflow: hidden;
+
+    transition: transform 0.2s;
+}
+
+.project-card:hover {
+    transform: translateY(-4px);
+}
+
+.project-card img {
+    width: 100%;
+    aspect-ratio: 16 / 9;
+    object-fit: cover;
+}
+
+.project-card-content {
+    padding: 1rem;
+}

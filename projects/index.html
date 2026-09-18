@@ -1,0 +1,33 @@
+---
+layout: default
+title: Games
+---
+
+<h1>Games</h1>
+
+<div class="project-grid">
+
+{% for project in site.projects %}
+
+    <a class="project-card" href="{{ project.url | relative_url }}">
+
+        {% if project.thumbnail %}
+            <img
+                src="{{ project.thumbnail | relative_url }}"
+                alt="{{ project.title }}"
+            >
+        {% endif %}
+
+        <div class="project-card-content">
+            <h2>{{ project.title }}</h2>
+
+            {% if project.description %}
+                <p>{{ project.description }}</p>
+            {% endif %}
+        </div>
+
+    </a>
+
+{% endfor %}
+
+</div>

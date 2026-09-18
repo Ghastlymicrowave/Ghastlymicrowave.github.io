@@ -1,0 +1,41 @@
+---
+layout: default
+title: Art
+---
+
+<h1>Art</h1>
+
+<div class="art-list">
+
+{% assign sorted_art = site.art | sort: "date" | reverse %}
+
+{% for piece in sorted_art %}
+
+    <article class="art-card">
+
+        {% if piece.thumbnail %}
+            <img
+                src="{{ piece.thumbnail | relative_url }}"
+                alt="{{ piece.title }}"
+            >
+        {% endif %}
+
+        <div>
+            <h2>
+                <a href="{{ piece.url | relative_url }}">
+                    {{ piece.title }}
+                </a>
+            </h2>
+
+            <time>
+                {{ piece.date | date: "%B %d, %Y" }}
+            </time>
+
+            <p>{{ piece.excerpt }}</p>
+        </div>
+
+    </article>
+
+{% endfor %}
+
+</div>
