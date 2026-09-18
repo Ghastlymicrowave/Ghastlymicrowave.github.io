@@ -1,5 +1,5 @@
 ---
-title: this is an arts
+title: this is something else!!!
 date: 2026-09-17
 thumbnail: "/assets/images/perchanced.png"
 ---
