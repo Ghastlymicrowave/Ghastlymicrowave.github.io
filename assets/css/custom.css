@@ -14,6 +14,7 @@ css
     margin: 0 auto;
 }
 
+
 .project-card {
     display: block;
 
@@ -22,12 +23,12 @@ css
 
     overflow: hidden;
 
-    background: rgba(255, 255, 255, 0.55);
+    background: rgba(255, 255, 255, 0.50);
 
     backdrop-filter: blur(10px);
     -webkit-backdrop-filter: blur(10px);
 
-    border: 1px solid rgba(40, 40, 50, 0.08);
+    border: 1px solid rgba(40, 40, 50, 0.07);
     border-radius: 10px;
 
     transition:
@@ -35,10 +36,12 @@ css
         background-color 0.25s ease;
 }
 
+
 .project-card:hover {
     transform: translateY(-4px);
-    background: rgba(255, 255, 255, 0.72);
+    background: rgba(255, 255, 255, 0.68);
 }
+
 
 .project-card img {
     display: block;
@@ -48,6 +51,7 @@ css
 
     object-fit: cover;
 }
+
 
 .project-card-content {
     padding: 1rem 1.1rem 1.2rem;
@@ -71,16 +75,22 @@ css
     margin: 0 auto;
 }
 
+
 @media (max-width: 900px) {
+
     .projects {
         grid-template-columns: repeat(2, 1fr);
     }
+
 }
 
+
 @media (max-width: 600px) {
+
     .projects {
         grid-template-columns: 1fr;
     }
+
 }
 
 
@@ -99,6 +109,7 @@ css
     margin: 2rem auto;
 }
 
+
 .youtube-embed iframe {
     display: block;
 
@@ -108,12 +119,14 @@ css
     border: 0;
 }
 
+
 .portfolio-video {
     width: 100%;
     max-width: 900px;
 
     margin: 2rem auto;
 }
+
 
 .portfolio-video video {
     display: block;
@@ -158,6 +171,7 @@ css
     margin: 2rem auto;
 }
 
+
 .image-grid img {
     display: block;
 
@@ -167,417 +181,43 @@ css
     margin: 0;
 }
 
+
 @media (max-width: 600px) {
+
     .image-grid {
         grid-template-columns: 1fr;
     }
+
 }
 
 
 /* =========================================================
-   PAGE BACKGROUND
+   PROJECT / ART PAGE BACKGROUND
    ========================================================= */
 
 /*
-   The body itself is transparent.
+   EVERYTHING BELOW THIS POINT ONLY AFFECTS PAGES
+   USING .project-page OR .art-post.
 
-   The animated background sits behind the entire page.
+   The homepage is not affected.
 */
 
-html,
-body {
-    min-height: 100%;
-
-    background: transparent;
-}
-
-body {
-    margin: 0;
-}
-
-
-/* =========================================================
-   SITE CONTAINER
-   ========================================================= */
-
-/*
-   IMPORTANT:
-
-   Do NOT give .site-container a solid background.
-   The animated background must remain visible through it.
-*/
-
-.site-container {
-    position: relative;
-    isolation: isolate;
-
-    min-height: 100vh;
-
-    background: transparent;
-}
-
-
-/* =========================================================
-   ANIMATED BACKGROUND
-   ========================================================= */
-
-.ambient-background {
-    position: fixed;
-
-    z-index: -10;
-
-    top: -25%;
-    left: -25%;
-
-    width: 150%;
-    height: 150%;
-
-    pointer-events: none;
-
-    /*
-       One continuous pastel field.
-       All gradients overlap heavily.
-    */
-
-    background:
-
-        radial-gradient(
-            ellipse 65% 55% at 15% 20%,
-            rgba(190, 165, 235, 0.70) 0%,
-            rgba(190, 165, 235, 0.30) 35%,
-            rgba(190, 165, 235, 0.00) 75%
-        ),
-
-        radial-gradient(
-            ellipse 65% 60% at 85% 25%,
-            rgba(155, 195, 235, 0.65) 0%,
-            rgba(155, 195, 235, 0.25) 40%,
-            rgba(155, 195, 235, 0.00) 75%
-        ),
-
-        radial-gradient(
-            ellipse 60% 60% at 75% 85%,
-            rgba(235, 180, 210, 0.60) 0%,
-            rgba(235, 180, 210, 0.25) 40%,
-            rgba(235, 180, 210, 0.00) 75%
-        ),
-
-        radial-gradient(
-            ellipse 65% 55% at 20% 85%,
-            rgba(160, 215, 205, 0.60) 0%,
-            rgba(160, 215, 205, 0.25) 40%,
-            rgba(160, 215, 205, 0.00) 75%
-        ),
-
-        linear-gradient(
-            135deg,
-            #e9e4f2 0%,
-            #e8edf5 25%,
-            #e8f0ed 50%,
-            #f0e8ef 75%,
-            #e9e5f2 100%
-        );
-
-    filter: blur(30px);
-
-    transform: scale(1.05);
-
-    animation: ambient-drift 32s ease-in-out infinite alternate;
-}
-
-
-/*
-   Very subtle texture over the colors.
-
-   This is intentionally weak so it does not become
-   distracting noise.
-*/
-
-.ambient-background::before {
-    content: "";
-
-    position: absolute;
-
-    inset: 0;
-
-    background:
-        repeating-radial-gradient(
-            circle at 35% 40%,
-            rgba(255, 255, 255, 0.10) 0,
-            rgba(255, 255, 255, 0.10) 1px,
-            transparent 1px,
-            transparent 8px
-        );
-
-    opacity: 0.22;
-
-    mix-blend-mode: soft-light;
-
-    pointer-events: none;
-}
-
-
-/*
-   No dark center.
-   No opaque veil.
-   This layer is only a tiny amount of white
-   to keep the pastel colors soft.
-*/
-
-.ambient-background::after {
-    content: "";
-
-    position: absolute;
-
-    inset: 0;
-
-    background: rgba(255, 255, 255, 0.06);
-
-    pointer-events: none;
-}
-
-
-/* =========================================================
-   BACKGROUND ANIMATION
-   ========================================================= */
-
-@keyframes ambient-drift {
-
-    0% {
-        transform:
-            translate3d(-3%, -2%, 0)
-            scale(1.05);
-    }
-
-    20% {
-        transform:
-            translate3d(2%, -4%, 0)
-            scale(1.08);
-    }
-
-    40% {
-        transform:
-            translate3d(4%, 2%, 0)
-            scale(1.04);
-    }
-
-    60% {
-        transform:
-            translate3d(-1%, 4%, 0)
-            scale(1.09);
-    }
-
-    80% {
-        transform:
-            translate3d(-4%, 1%, 0)
-            scale(1.06);
-    }
-
-    100% {
-        transform:
-            translate3d(2%, -2%, 0)
-            scale(1.05);
-    }
-}
-
-
-/* =========================================================
-   HEADER / NAVIGATION
-   ========================================================= */
-
-.site-container > header {
-    position: relative;
-
-    z-index: 10;
-
-    background: #ffffff;
-
-    border-bottom:
-        1px solid rgba(40, 40, 50, 0.08);
-}
-
-.site-container > header nav {
-    position: relative;
-}
-
-
-/* =========================================================
-   GENERAL CONTENT
-   ========================================================= */
-
-main {
-    position: relative;
-
-    z-index: 1;
-}
-
-
-/* =========================================================
-   PROJECT / ART PAGE
-   ========================================================= */
 
 .project-page {
+    position: relative;
+
+    isolation: isolate;
+
     width: min(1000px, 92%);
 
     margin: 0 auto;
+
+    padding-top: 1px;
 }
 
 
 /*
-   The page itself is translucent.
+   The animated background lives behind the project page.
 
-   The animated background remains visible THROUGH this
-   panel instead of being replaced by a solid color.
-*/
-
-.project-post,
-.art-post {
-    box-sizing: border-box;
-
-    width: 100%;
-    max-width: 1000px;
-
-    margin: 3rem auto;
-
-    padding: 2.5rem 3rem;
-
-    background: rgba(255, 255, 255, 0.30);
-
-    backdrop-filter: blur(12px);
-    -webkit-backdrop-filter: blur(12px);
-
-    border:
-        1px solid rgba(255, 255, 255, 0.35);
-
-    border-radius: 14px;
-}
-
-
-/* =========================================================
-   PROJECT PAGE HEADER
-   ========================================================= */
-
-.project-post-header {
-    margin-bottom: 3rem;
-
-    padding-bottom: 1.5rem;
-
-    border-bottom:
-        1px solid rgba(40, 40, 50, 0.10);
-}
-
-.project-post-header h1 {
-    margin: 0 0 0.5rem 0;
-}
-
-.project-post-header time {
-    display: block;
-
-    margin: 0;
-
-    font-size: 0.9rem;
-
-    opacity: 0.65;
-}
-
-
-/* =========================================================
-   PROJECT CONTENT
-   ========================================================= */
-
-.project-content {
-    width: 100%;
-}
-
-.project-content h1,
-.project-content h2,
-.project-content h3,
-.project-content h4 {
-    margin-top: 2.5rem;
-
-    margin-bottom: 1rem;
-}
-
-.project-content > h1:first-child,
-.project-content > h2:first-child,
-.project-content > h3:first-child {
-    margin-top: 0;
-}
-
-.project-content p {
-    margin-top: 0;
-
-    margin-bottom: 1.25rem;
-}
-
-
-/* =========================================================
-   POST NAVIGATION
-   ========================================================= */
-
-.post-navigation {
-    width: min(1000px, 92%);
-
-    margin: 2rem auto;
-
-    padding: 1rem;
-
-    background: rgba(255, 255, 255, 0.38);
-
-    backdrop-filter: blur(10px);
-    -webkit-backdrop-filter: blur(10px);
-
-    border:
-        1px solid rgba(255, 255, 255, 0.30);
-
-    border-radius: 10px;
-}
-
-
-/* =========================================================
-   RESPONSIVE PROJECT PAGE
-   ========================================================= */
-
-@media (max-width: 1060px) {
-
-    .project-post,
-    .art-post {
-        width: calc(100% - 2rem);
-
-        padding: 2rem;
-    }
-
-}
-
-@media (max-width: 600px) {
-
-    .project-post,
-    .art-post {
-        width: calc(100% - 1rem);
-
-        padding: 1.5rem;
-
-        margin: 1.5rem auto;
-
-        border-radius: 10px;
-    }
-
-}
-
-
-/* =========================================================
-   REDUCED MOTION
-   ========================================================= */
-
-@media (prefers-reduced-motion: reduce) {
-
-    .ambient-background {
-        animation: none;
-    }
-
-    .project-card {
-        transition: none;
-    }
-
-}
+   Because it is scoped to .proj
 
