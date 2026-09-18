@@ -5,61 +5,118 @@
 <!DOCTYPE html>
 
 <html lang="en">
+
 <head>
+
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
+    <title>
+        {% if page.title == "Home" %}
+            {{ site.title }}
+        {% else %}
+            {{ page.title }} | {{ site.title }}
+        {% endif %}
+    </title>
 
-<title>
-    {% if page.title == "Home" %}
-        {{ site.title }}
-    {% else %}
-        {{ page.title }} | {{ site.title }}
-    {% endif %}
-</title>
+    <meta name="description" content="{{ site.description }}">
 
-<meta name="description" content="{{ site.description }}">
+    <link rel="stylesheet"
+          href="{{ '/assets/css/all.css' | relative_url }}">
 
-<link rel="stylesheet"
-      href="{{ '/assets/css/all.css' | relative_url }}">
+    <link rel="stylesheet"
+          href="{{ '/assets/css/custom.css' | relative_url }}">
 
-<link rel="stylesheet"
-      href="{{ '/assets/css/custom.css' | relative_url }}">
-
-{% seo %}
-
+    {% seo %}
 
 </head>
 
+
 <body>
 
-<div class="site-container">
+    <!-- Hidden SVG filter used by the animated background -->
 
-<header class="site-header">
+    <svg
+        width="0"
+        height="0"
+        style="position:absolute"
+        aria-hidden="true">
 
-    <div class="site-header-inner">
+        <filter id="liquid-distortion">
 
-        <a href="{{ '/' | relative_url }}" class="site-title">
-            Guinevere Vaughan
-        </a>
+            <feTurbulence
+                type="fractalNoise"
+                baseFrequency="0.008"
+                numOctaves="3"
+                seed="8"
+                result="noise">
 
-        <nav>
-            <a href="{{ '/' | relative_url }}">Home</a>
-            <a href="{{ '/projects/' | relative_url }}">Games</a>
-            <a href="{{ '/art/' | relative_url }}">Art</a>
-            <a href="https://ghastlymicrowave.github.io/resume/">About</a>
-        </nav>
+                <animate
+                    attributeName="baseFrequency"
+                    dur="35s"
+                    values="
+                        0.006;
+                        0.009;
+                        0.007;
+                        0.010;
+                        0.006
+                    "
+                    repeatCount="indefinite" />
+
+            </feTurbulence>
+
+
+            <feDisplacementMap
+                in="SourceGraphic"
+                in2="noise"
+                scale="55"
+                xChannelSelector="R"
+                yChannelSelector="G" />
+
+        </filter>
+
+    </svg>
+
+
+    <div class="site-container">
+
+        <header class="site-header">
+
+            <div class="site-header-inner">
+
+                <nav>
+
+                    <a href="{{ '/' | relative_url }}">
+                        Guinevere Vaughan
+                    </a>
+
+                    <a href="{{ '/projects/' | relative_url }}">
+                        Games
+                    </a>
+
+                    <a href="{{ '/art/' | relative_url }}">
+                        Art
+                    </a>
+
+                    <a href="https://ghastlymicrowave.github.io/resume/">
+                        Resume
+                    </a>
+
+                </nav>
+
+            </div>
+
+        </header>
+
+
+        {{ content }}
+
+
+        {% include footer.html %}
 
     </div>
 
-</header>
-
-{{ content }}
-
-{% include footer.html %}
-
-
-</div>
-
 </body>
+
 </html>
+

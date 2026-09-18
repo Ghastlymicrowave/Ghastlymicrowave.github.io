@@ -36,42 +36,47 @@ body {
    ANIMATED BACKGROUND
    ========================================================= */
 
+body {
+    background: #29172f;
+}
+
+
 body::before {
     content: "";
 
     position: fixed;
 
-    inset: -50%;
+    inset: -10%;
 
     z-index: -1;
 
     pointer-events: none;
 
-    width: 200%;
-    height: 200%;
+    width: 120%;
+    height: 120%;
 
     background:
         radial-gradient(
-            ellipse 34% 42% at 12% 18%,
-            rgba(105, 45, 180, 0.95),
-            transparent 68%
-        ),
-
-        radial-gradient(
-            ellipse 38% 34% at 88% 15%,
-            rgba(145, 35, 105, 0.92),
+            ellipse 55% 50% at 15% 20%,
+            rgba(105, 45, 180, 0.55),
             transparent 70%
         ),
 
         radial-gradient(
-            ellipse 34% 42% at 82% 86%,
-            rgba(190, 45, 75, 0.90),
-            transparent 68%
+            ellipse 55% 50% at 85% 20%,
+            rgba(145, 35, 105, 0.50),
+            transparent 70%
         ),
 
         radial-gradient(
-            ellipse 40% 35% at 15% 88%,
-            rgba(75, 35, 125, 0.95),
+            ellipse 55% 55% at 80% 85%,
+            rgba(190, 45, 75, 0.48),
+            transparent 70%
+        ),
+
+        radial-gradient(
+            ellipse 55% 50% at 15% 85%,
+            rgba(75, 35, 125, 0.55),
             transparent 70%
         ),
 
@@ -83,37 +88,9 @@ body::before {
             #29152f
         );
 
-    filter: blur(18px);
+    filter: url("#liquid-distortion");
 
-    transform-origin: center center;
-
-    animation:
-        background-drift 24s ease-in-out infinite alternate;
-}
-
-
-@keyframes background-drift {
-
-    0% {
-        transform:
-            translate3d(-4%, -3%, 0)
-            rotate(-1deg)
-            scale(1.04);
-    }
-
-    50% {
-        transform:
-            translate3d(4%, 3%, 0)
-            rotate(1.5deg)
-            scale(1.10);
-    }
-
-    100% {
-        transform:
-            translate3d(-2%, 5%, 0)
-            rotate(-0.5deg)
-            scale(1.06);
-    }
+    transform: scale(1.1);
 }
 
 
@@ -139,6 +116,7 @@ body::before {
 }
 
 
+
 /* =========================================================
    HEADER CONTENT
    ========================================================= */
@@ -162,9 +140,10 @@ body::before {
 .site-title {
     display: block;
 
-    color: #333;
+    color: #25232a;
 
-    font-size: 1.25rem;
+    font-family: 'Roboto', sans-serif;
+    font-size: 1.5rem;
     font-weight: 700;
 
     text-decoration: none;
@@ -179,6 +158,9 @@ body::before {
     align-items: center;
 
     gap: 1.5rem;
+
+    font-family: 'Roboto', sans-serif;
+    font-size: 1rem;
 }
 
 
@@ -200,11 +182,12 @@ body::before {
     }
 
     .site-title {
-        font-size: 1rem;
+        font-size: 1.25rem;
     }
 
     .site-header nav {
         gap: 0.8rem;
+        font-size: 0.9rem;
     }
 }
 
