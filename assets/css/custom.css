@@ -49,43 +49,43 @@ body::before {
 
     background:
         radial-gradient(
-            ellipse 55% 55% at 8% 15%,
-            rgba(170, 115, 255, 0.78),
+            ellipse 38% 42% at 8% 15%,
+            rgba(145, 70, 255, 0.90),
             transparent 70%
         ),
 
         radial-gradient(
-            ellipse 60% 55% at 92% 12%,
-            rgba(75, 165, 255, 0.78),
+            ellipse 40% 38% at 92% 12%,
+            rgba(30, 125, 255, 0.90),
             transparent 70%
         ),
 
         radial-gradient(
-            ellipse 55% 60% at 88% 92%,
-            rgba(255, 110, 190, 0.72),
+            ellipse 38% 42% at 88% 92%,
+            rgba(255, 50, 165, 0.88),
             transparent 70%
         ),
 
         radial-gradient(
-            ellipse 60% 55% at 8% 90%,
-            rgba(55, 210, 185, 0.72),
+            ellipse 40% 38% at 8% 90%,
+            rgba(15, 210, 170, 0.88),
             transparent 70%
         ),
 
         linear-gradient(
             135deg,
-            #ded3f2,
-            #d9e7f7,
-            #d8eee8,
-            #f1d9e8
+            #d7c5f5,
+            #c9def5,
+            #c5e9df,
+            #f0c8df
         );
 
-    filter: blur(22px);
+    filter: blur(10px);
 
     transform: scale(1.15);
 
     animation:
-        color-field 18s ease-in-out infinite alternate;
+        color-field 10s ease-in-out infinite alternate;
 }
 
 
