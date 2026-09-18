@@ -19,7 +19,7 @@ body::before {
     content: "";
 
     position: fixed;
-    inset: -20%;
+    inset: -25%;
 
     z-index: -1;
 
@@ -27,51 +27,53 @@ body::before {
 
     background:
         radial-gradient(
-            ellipse 70% 65% at 10% 15%,
-            rgba(190, 165, 235, 0.55),
-            transparent 70%
+            ellipse 70% 65% at 8% 12%,
+            rgba(185, 145, 245, 0.72),
+            transparent 68%
         ),
 
         radial-gradient(
-            ellipse 70% 65% at 90% 20%,
-            rgba(155, 195, 235, 0.50),
-            transparent 70%
+            ellipse 70% 65% at 92% 18%,
+            rgba(125, 180, 245, 0.68),
+            transparent 68%
         ),
 
         radial-gradient(
-            ellipse 70% 65% at 85% 90%,
-            rgba(235, 180, 210, 0.48),
-            transparent 70%
+            ellipse 70% 65% at 88% 92%,
+            rgba(245, 155, 205, 0.64),
+            transparent 68%
         ),
 
         radial-gradient(
-            ellipse 70% 65% at 10% 90%,
-            rgba(160, 215, 205, 0.48),
-            transparent 70%
+            ellipse 70% 65% at 8% 88%,
+            rgba(115, 205, 190, 0.64),
+            transparent 68%
         ),
 
         linear-gradient(
             135deg,
-            #e9e4f2,
-            #e8edf5,
-            #e8f0ed,
-            #f0e8ef,
-            #e9e5f2
+            #e8dff5,
+            #e1eaf7,
+            #e1f0eb,
+            #f2e1ed,
+            #e8e0f5
         );
 
-    filter: blur(28px);
+    filter: blur(32px);
 
     transform: scale(1.1);
 
-    animation: pastel-drift 35s ease-in-out infinite alternate;
+    animation: pastel-drift 22s ease-in-out infinite alternate;
 }
 
+
+/* Subtle moving texture */
 
 body::after {
     content: "";
 
     position: fixed;
-    inset: 0;
+    inset: -10%;
 
     z-index: -1;
 
@@ -80,15 +82,17 @@ body::after {
     background:
         repeating-radial-gradient(
             circle at 35% 40%,
-            rgba(255, 255, 255, 0.07) 0,
-            rgba(255, 255, 255, 0.07) 1px,
+            rgba(255, 255, 255, 0.09) 0,
+            rgba(255, 255, 255, 0.09) 1px,
             transparent 1px,
             transparent 9px
         );
 
-    opacity: 0.18;
+    opacity: 0.22;
 
     mix-blend-mode: soft-light;
+
+    animation: texture-drift 30s linear infinite;
 }
 
 
@@ -96,32 +100,66 @@ body::after {
 
     0% {
         transform:
-            translate3d(-2%, -1%, 0)
-            scale(1.1);
+            translate3d(-5%, -3%, 0)
+            scale(1.10)
+            rotate(0deg);
     }
 
-    25% {
+    20% {
         transform:
-            translate3d(2%, -3%, 0)
-            scale(1.12);
+            translate3d(2%, -5%, 0)
+            scale(1.14)
+            rotate(1deg);
+    }
+
+    40% {
+        transform:
+            translate3d(5%, 2%, 0)
+            scale(1.09)
+            rotate(-1deg);
+    }
+
+    60% {
+        transform:
+            translate3d(1%, 5%, 0)
+            scale(1.15)
+            rotate(1deg);
+    }
+
+    80% {
+        transform:
+            translate3d(-5%, 3%, 0)
+            scale(1.11)
+            rotate(-1deg);
+    }
+
+    100% {
+        transform:
+            translate3d(-2%, -4%, 0)
+            scale(1.14)
+            rotate(0deg);
+    }
+}
+
+
+@keyframes texture-drift {
+
+    0% {
+        transform:
+            translate3d(-2%, -1%, 0)
+            scale(1);
     }
 
     50% {
         transform:
             translate3d(3%, 2%, 0)
-            scale(1.08);
-    }
-
-    75% {
-        transform:
-            translate3d(-2%, 3%, 0)
-            scale(1.13);
+            scale(1.04);
     }
 
     100% {
         transform:
-            translate3d(1%, -1%, 0)
-            scale(1.1);
+            translate3d(-2%, 3%, 0)
+            scale(1);
     }
 }
 
@@ -146,18 +184,17 @@ body::after {
    INDEX / LIST PAGES
    ========================================================= */
 
-/*
-   The main wrapper is transparent.
-
-   Each section gets its own rounded glass panel.
-*/
-
 .site-main {
     box-sizing: border-box;
 
     width: min(1100px, 92vw);
 
-    margin: 3rem auto;
+    margin-top: 3rem;
+    margin-bottom: 3rem;
+
+    margin-left: 50%;
+
+    transform: translateX(-50%);
 
     padding: 0;
 
@@ -188,14 +225,10 @@ body::after {
 }
 
 
-/* No extra space below the last panel */
-
 .site-main .projects-section:last-child {
     margin-bottom: 0;
 }
 
-
-/* Section headings */
 
 .site-main .projects-section > h1 {
     margin-top: 0;
@@ -515,7 +548,12 @@ body::after {
     .site-main {
         width: calc(100% - 1rem);
 
-        margin: 1.5rem auto;
+        margin-top: 1.5rem;
+        margin-bottom: 1.5rem;
+
+        margin-left: 50%;
+
+        transform: translateX(-50%);
     }
 
 
@@ -562,7 +600,8 @@ body::after {
 
 @media (prefers-reduced-motion: reduce) {
 
-    body::before {
+    body::before,
+    body::after {
         animation: none;
     }
 
