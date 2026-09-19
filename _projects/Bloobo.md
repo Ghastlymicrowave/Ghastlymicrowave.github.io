@@ -2,8 +2,8 @@
 layout: project
 title: Bloobo
 date: 5/8/2023
-image: /assets/projects/bloobo/bloobo_happy.png
-description: A short description of my game.
+image: /assets/projects/blindsight/header.jpg
+description: A 2D Physics game for Mobile
 ---
 ## Overview
 
@@ -30,11 +30,9 @@ Bloobo is a 2D Physics based platformer that I worked on as a collaboration with
 
 The game was hosted on the IOS app store but is currently not available.
 
-## My Role
+## My Contributions
 
 I worked as a Tech Artist and contributed to the game's particle effects and vfx using shaders.
-
-## My Contributions
 
 ### Blur Shader and effects derived from it
 ![visual shadergraph showing a blur shader](/assets/projects/bloobo/blurShader.png)
