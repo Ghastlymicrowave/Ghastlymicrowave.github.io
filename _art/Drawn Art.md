@@ -1,7 +1,6 @@
 ---
 layout: art
 title: '2017-2020 Misc. Drawn Art'
-date: 
 image: /assets/art/pre2020drawn/demon.jpg
 description: Misc. Drawn art
 layout: art
