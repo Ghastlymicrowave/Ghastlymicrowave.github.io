@@ -1,7 +1,6 @@
 ---
 layout: art
 title: 'Misc Digital Art'
-date: 
 image: /assets/art/randomDigital/evil-weezer.png
 description: Stuff I made or tweaked. Weird stuff.
 layout: art

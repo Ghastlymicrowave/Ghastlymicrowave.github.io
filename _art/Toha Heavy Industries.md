@@ -1,7 +1,6 @@
 ---
 layout: art
 title: '2020 Liminal Renders and Drawn Art'
-date: 
 image: /assets/art/2020Liminal/wall.webp
 description: 3D Blender Renders inspired by liminal spaces and environments in manga
 layout: art
