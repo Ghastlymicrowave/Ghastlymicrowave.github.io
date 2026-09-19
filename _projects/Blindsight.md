@@ -88,8 +88,8 @@ There were post-release updates planned that would include a revamped visibility
     </video>
 </div>
 
-![programmer art describing the effect design](/assets/projects/bloobo/visibility.png)
-![programmer art describing the effect design](/assets/projects/bloobo/visibilityShader.png)
+![programmer art describing the effect design](/assets/projects/blindsight/visibility.png)
+![programmer art describing the effect design](/assets/projects/blindsight/visibilityShader.png)
 As with many of my vfx additions, I designed it to be modular as possible. The more properties that are accessible to me, the easier it is to tweak.
 
 ![Gameplay screenshot](/assets/projects/blindsight/shadergraph.png)
