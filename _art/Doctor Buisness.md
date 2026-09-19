@@ -3,7 +3,7 @@ layout: art
 title: Doctor Buisness
 date: 2022-04-1
 image: https://imgur.com/kI5ctKF.png
-description: cool thing
+description: A webcomic about the Doctor of Buisness
 layout: art
 ---
 ![A banner](https://imgur.com/pKLkwXi.png)
