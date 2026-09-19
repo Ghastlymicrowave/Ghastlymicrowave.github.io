@@ -2,15 +2,15 @@
 layout: art
 title: Doctor Buisness
 date: 2022-04-1
-image: https://imgur.com/kI5ctKF
+image: https://imgur.com/kI5ctKF.png
 description: cool thing
 layout: art
 ---
-![A banner](https://imgur.com/pKLkwXi)
-![one of the early panels](https://imgur.com/kI5ctKF)
+![A banner](https://imgur.com/pKLkwXi.png)
+![one of the early panels](https://imgur.com/kI5ctKF.png)
 A comic hosted on a site dedicated to webcomics in the style of '[Homestuck](<https://homestuck.com/>)'
 
-![insulting 'mr Google'](https://imgur.com/9zFt26g)
+![insulting 'mr Google'](https://imgur.com/9zFt26g.png)
 Content Warning: Strong Language, Humor Involving Suggestive Themes
 
 read it [here](https://mspfa.com/?s=33460&p=1) 
