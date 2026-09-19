@@ -1,6 +1,6 @@
 ---
 layout: project
-title: Blindsight: War of the Wardens
+title: Blindsight, War of the Wardens
 date: 2023-05-12
 image: /assets/projects/blindsight/header.png
 description: A 3D story-driven Brawler
@@ -60,24 +60,25 @@ There were post-release updates planned that would include a revamped visibility
         <source src="{{ '/assets/projects/blindsight/visibility1.mp4' | relative_url }}" type="video/mp4">
     </video>
     <video autoplay muted loop playsinline preload="metadata">
-        <source src="{{ '/assets/projects/bloobo/visibility2.mp4' | relative_url }}" type="video/mp4">
+        <source src="{{ '/assets/projects/blindsight/visibility2.mp4' | relative_url }}" type="video/mp4">
     </video>
     <video autoplay muted loop playsinline preload="metadata">
-        <source src="{{ '/assets/projects/bloobo/visibility3.mp4' | relative_url }}" type="video/mp4">
+        <source src="{{ '/assets/projects/blindsight/visibility3.mp4' | relative_url }}" type="video/mp4">
     </video>
     <video autoplay muted loop playsinline preload="metadata">
-        <source src="{{ '/assets/projects/bloobo/visibility4.mp4' | relative_url }}" type="video/mp4">
+        <source src="{{ '/assets/projects/blindsight/visibility4.mp4' | relative_url }}" type="video/mp4">
     </video>
     <video autoplay muted loop playsinline preload="metadata">
-        <source src="{{ '/assets/projects/bloobo/visibility5.mp4' | relative_url }}" type="video/mp4">
+        <source src="{{ '/assets/projects/blindsight/visibility5.mp4' | relative_url }}" type="video/mp4">
     </video>
     <video autoplay muted loop playsinline preload="metadata">
-        <source src="{{ '/assets/projects/bloobo/visibility6.mp4' | relative_url }}" type="video/mp4">
+        <source src="{{ '/assets/projects/blindsight/visibility6.mp4' | relative_url }}" type="video/mp4">
     </video>
     <video autoplay muted loop playsinline preload="metadata">
-        <source src="{{ 'visibilityShader.png.mp4' | relative_url }}" type="video/mp4">
+        <source src="{{ '/assets/projects/blindsight/visibility7.mp4' | relative_url }}" type="video/mp4">
     </video>
 </div>
+
 ![programmer art describing the effect design](/assets/projects/bloobo/visibility.png)
 ![programmer art describing the effect design](/assets/projects/bloobo/visibilityShader.png)
 As with many of my vfx additions, I designed it to be modular as possible. The more properties that are accessible to me, the easier it is to tweak.
