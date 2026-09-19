@@ -1,6 +1,6 @@
 ---
 layout: project
-title: Bloobo
+title: "Bloobo"
 date: 5/8/2023
 image: /assets/projects/bloobo/bloobo_happy.png
 description: A 2D Physics game for Mobile

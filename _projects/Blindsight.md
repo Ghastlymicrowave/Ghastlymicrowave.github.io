@@ -1,13 +1,22 @@
 ---
 layout: project
-title: Blindsight, War of the Wardens
+title: "Blindsight: War of the Wardens"
 date: 2023-05-12
-image: /assets/projects/blindsight/header.png
+image: /assets/projects/blindsight/header.jpg
 description: A 3D story-driven Brawler
 ---
 ## Overview
 
 Blindsight: War of the Wardens is a 3D Brawler I worked on as a tech artist alongside students through USC Games.
+
+<div class="youtube-embed">
+    <iframe
+        src="https://www.youtube.com/embed/mR_ohooG_to"
+        title="YouTube video"
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+        allowfullscreen>
+    </iframe>
+</div>
 
 [Steam Link](https://store.steampowered.com/app/2187370/Blindsight_War_of_the_Wardens/)
 
