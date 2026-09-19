@@ -2,7 +2,7 @@
 layout: project
 title: Blindsight: War of the Wardens
 date: 2023-05-12
-image: /assets/images/perchanced.png
+image: /assets/projects/blindsight/header.png
 description: A 3D story-driven Brawler
 ---
 ## Overview
